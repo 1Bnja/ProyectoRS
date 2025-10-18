@@ -28,10 +28,18 @@ body {
   color: var(--text-dark);
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .rainbow-bar {
-  height: 6px;
+  height: 4px;
   background: linear-gradient(to right, 
     var(--rainbow-1) 0%, 
     var(--rainbow-2) 16.66%, 
@@ -44,7 +52,6 @@ body {
 header {
   background: white;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  position: sticky;
   top: 0;
   z-index: 1000;
 }
@@ -52,25 +59,25 @@ header {
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem);
+  padding: clamp(0.4rem, 1.5vw, 0.7rem) clamp(0.8rem, 2.5vw, 1.2rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 4vw, 2rem);
+  gap: clamp(0.5rem, 2vw, 1rem);
   flex-wrap: wrap;
 }
 
 .logo {
   max-width: 250px;
-  height: auto;
+  height: 100%;
   display: block;
 }
 
 .logo-top {
   display: block;
-  margin: 0 auto 1rem;
-  width: clamp(180px, 25vw, 280px);
-  max-width: 280px;
+  margin: 0 auto 0.2rem;
+  width: clamp(80px, 12vw, 120px);
+  max-width: 120px;
   height: auto;
   object-fit: contain;
 }
@@ -87,13 +94,15 @@ header {
 
 .header-text h1 {
   color: var(--dark-green);
-  font-size: clamp(1.9rem, 4vw, 2.4rem);
-  margin-bottom: 0.4rem;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  margin-bottom: 0.15rem;
+  line-height: 1.15;
 }
 
 .header-text p {
   color: var(--text-light);
-  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+  line-height: 1.25;
 }
 
 nav {
@@ -116,9 +125,9 @@ nav {
   background: none;
   border: none;
   color: white;
-  padding: 1.25rem 1.75rem;
+  padding: 0.7rem 1.2rem;
   cursor: pointer;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 600;
   transition: all 0.3s;
   white-space: nowrap;
@@ -138,8 +147,9 @@ main {
   flex: 1 0 auto;
   width: 100%;
   max-width: 1200px;
-  margin: clamp(1.75rem, 4vw, 2.75rem) auto;
-  padding: 0 clamp(0.8rem, 4vw, 2.5rem);
+  margin: clamp(0.5rem, 2vw, 1.2rem) auto;
+  padding: 0 clamp(0.8rem, 3vw, 2rem);
+  min-height: calc(100vh - 400px); /* Añade altura mínima */
 }
 
 .section {
@@ -160,9 +170,10 @@ main {
 #inicio {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 1rem;
+  align-items: center;
+  padding: 0;
   width: 100%;
+  min-height: calc(111vh - 450px);
 }
 
 #inicio .intro-section {
@@ -177,7 +188,7 @@ main {
   background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
   color: white;
   padding: clamp(1.5rem, 4vw, 2rem);
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px 15px 15px 15px;
   margin-bottom: 0;
 }
 
@@ -247,48 +258,54 @@ main {
 
 .intro-section {
   background: white;
-  padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 6vw, 4rem);
-  border-radius: 18px;
-  box-shadow: 0 8px 36px rgba(0,0,0,0.14);
+  padding: clamp(1.2rem, 3vw, 2rem) clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
   text-align: center;
-  margin: 0 auto clamp(2rem, 5vw, 3rem);
+  margin: 0 auto;
   max-width: 1200px;
-  width: min(95%, 1100px);
+  width: min(95%, 1000px);
 }
 
 .intro-section h2 {
   color: var(--dark-green);
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1rem;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 0.6rem;
   line-height: 1.1;
 }
 
 .intro-section p {
   color: var(--text-light);
-  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-  max-width: 900px;
-  margin: 0 auto clamp(1.75rem, 4vw, 2.25rem);
-  line-height: 1.85;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  max-width: 850px;
+  margin: 0 auto clamp(0.8rem, 2vw, 1.2rem);
+  line-height: 1.5;
 }
 
 .diversity-icons {
   display: flex;
   justify-content: center;
-  gap: clamp(1.25rem, 4vw, 2rem);
+  gap: clamp(0.7rem, 2.5vw, 1.2rem);
   flex-wrap: wrap;
-  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  margin-top: clamp(0.8rem, 2vw, 1.3rem);
 }
 
 .diversity-icon {
-  width: clamp(72px, 12vw, 96px);
-  height: clamp(72px, 12vw, 96px);
+  width: clamp(50px, 9vw, 65px);
+  height: clamp(50px, 9vw, 65px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  font-size: clamp(1.4rem, 4.5vw, 1.8rem);
   color: white;
   animation: float 3s ease-in-out infinite;
+}
+
+.diversity-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .diversity-icon:nth-child(1) { background: var(--rainbow-1); animation-delay: 0s; }
@@ -307,9 +324,10 @@ footer {
   background: var(--dark-green);
   color: white;
   text-align: center;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
-  margin-top: 0;
+  padding: clamp(0.8rem, 2.5vw, 1.2rem) clamp(1rem, 3vw, 1.5rem);
   flex-shrink: 0;
+  margin-top: auto;
+  width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
 .footer-inner {
@@ -318,7 +336,95 @@ footer {
 }
 
 footer p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  line-height: 1.4;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.modal-close:hover {
+  background: var(--dark-green);
+  transform: rotate(90deg);
+}
+
+.modal-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto 1.5rem;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.modal-content h3 {
+  color: var(--dark-green);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-content p {
+  color: var(--text-dark);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: justify;
 }
 
 @media (max-width: 768px) {
@@ -456,7 +562,6 @@ footer p {
   }
 }
 
-/* Mejoras adicionales para pantallas muy pequeñas */
 @media (max-width: 360px) {
   .logo-top {
     width: 100px;

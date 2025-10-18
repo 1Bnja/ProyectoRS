@@ -5,11 +5,11 @@ function Footer() {
     <footer>
       <div className="footer-inner">
         <RainbowBar />
-        <p style={{ marginTop: '1rem' }}>
+        <p style={{ marginTop: '0.6rem' }}>
           <strong>Municipalidad de Curicó</strong>
         </p>
         <p>#Unidos por una sociedad más inclusiva y respetuosa</p>
-        <p style={{ marginTop: '1rem', opacity: 0.8 }}>
+        <p style={{ marginTop: '0.4rem', opacity: 0.8 }}>
           © 2025 - Todos los derechos reservados
         </p>
       </div>
