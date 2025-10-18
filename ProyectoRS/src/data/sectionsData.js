@@ -1,7 +1,7 @@
 export const sectionsData = {
   sexualidad: {
     title: 'Sexualidad',
-    description: 'Conoce las diferentes orientaciones sexuales y conceptos relacionados',
+    description: 'Según la Organización Mundial de la Salud (OMS), la sexualidad es un aspecto central del ser humano presente a lo largo de toda su vida, que va mucho más allá del acto sexual. Abarca dimensiones como el sexo, las identidades y roles de género, la orientación sexual, el erotismo, el placer, la intimidad y la reproducción. Esta se vivencia y expresa a través de pensamientos, deseos, creencias y relaciones, y está influenciada por una compleja interacción de factores biológicos, psicológicos, sociales y culturales.',
     cards: [
       {
         icon: 'G',
@@ -47,7 +47,7 @@ export const sectionsData = {
   },
   genero: {
     title: 'Género',
-    description: 'Comprende las construcciones sociales y culturales sobre lo femenino y lo masculino',
+    description: 'De acuerdo con la Organización Mundial de la Salud (OMS), el género se refiere a los conceptos sociales sobre las funciones, comportamientos, actividades y atributos que cada sociedad considera apropiados para los hombres y las mujeres. A diferencia del "sexo", que son las características biológicas con las que nacemos, el género es una construcción social que se aprende, puede cambiar con el tiempo y varía significativamente entre culturas, determinando roles, expectativas y relaciones de poder ("masculino" y "femenino") dentro de una comunidad.',
     cards: [
       {
         icon: '⚧',
@@ -83,7 +83,7 @@ export const sectionsData = {
   },
   sexo: {
     title: 'Sexo',
-    description: 'Aspectos biológicos y su relación con el género',
+    description: 'De acuerdo con la Organización Mundial de la Salud (OMS), el sexo se refiere al conjunto de características biológicas y fisiológicas que diferencian a los seres humanos, clasificándolos principalmente como hombres, mujeres o intersexuales. Estas características son universales y están determinadas por la genética (como los cromosomas XX o XY), las hormonas (como los niveles de estrógenos y andrógenos) y la anatomía (como los órganos reproductivos). A diferencia del género, que es una construcción social, el sexo es la condición biológica que generalmente se asigna a una persona al nacer.',
     cards: [
       {
         icon: '🧬',
@@ -104,7 +104,7 @@ export const sectionsData = {
   },
   identidad: {
     title: 'Identidad',
-    description: 'Conceptos relacionados con la identidad de género',
+    description: 'La identidad de género se refiere a la vivencia interna e individual del género tal como cada persona la siente profundamente, la cual, según la Organización Mundial de la Salud (OMS) y la Real Academia Española (RAE), podría corresponder o no con el sexo asignado al nacer. Es, en esencia, la percepción y conciencia que una persona tiene de su propio género (sea hombre, mujer, no binario u otro), independientemente de sus características biológicas.',
     cards: [
       {
         icon: 'T',
