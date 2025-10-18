@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Servicio de desarrollo
+  app-dev:
+    build:
+      context: .
+      target: development
+    container_name: proyectors-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
+    networks:
+      - proyectors-network
+
+  # Servicio de producción
+  app-prod:
+    build:
+      context: .
+      target: production
+    container_name: proyectors-prod
+    ports:
+      - "80:80"
+    networks:
+      - proyectors-network
+    restart: unless-stopped
+
+networks:
+  proyectors-network:
+    driver: bridge
