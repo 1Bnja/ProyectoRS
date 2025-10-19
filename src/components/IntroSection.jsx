@@ -4,7 +4,7 @@ import Bisexual from '../assets/Bisexual.png'
 import Asexual from '../assets/Asexual.png'
 import pansexual from '../assets/pansexual.png'
 import Transgender from '../assets/Transgender.png'
-import NonBinary from '../assets/NonBinary.png'
+import NonBinary from '../assets/Nonbinary.png'
 
 
 function IntroSection() {
