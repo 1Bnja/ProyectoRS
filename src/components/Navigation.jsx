@@ -4,7 +4,8 @@ function Navigation({ activeSection, onSectionChange }) {
     { id: 'sexualidad', label: 'Sexualidad' },
     { id: 'genero', label: 'Género' },
     { id: 'sexo', label: 'Sexo' },
-    { id: 'identidad', label: 'Identidad' }
+    { id: 'identidad', label: 'Identidad' },
+    { id: 'kahoot', label: 'Kahoot' }
   ]
 
   return (
