@@ -3,6 +3,22 @@ export const sectionsData = {
     title: 'Sexualidad',
     description: 'Según la Organización Mundial de la Salud (OMS), la sexualidad es un aspecto central del ser humano presente a lo largo de toda su vida, que va mucho más allá del acto sexual. Abarca dimensiones como el sexo, las identidades y roles de género, la orientación sexual, el erotismo, el placer, la intimidad y la reproducción. Esta se vivencia y expresa a través de pensamientos, deseos, creencias y relaciones, y está influenciada por una compleja interacción de factores biológicos, psicológicos, sociales y culturales.',
     cards: [
+
+        {
+        icon: '⚠',
+        title: 'Heteronormatividad',
+        description: 'Se le considera como un modelo social y cultural que impone que la heterosexualidad sea la única orientación sexual \'normal\', natural y aceptada.'
+      },
+      {
+        icon: '🌈',
+        title: 'Diversidades Sexuales',
+        description: 'Se refiere a todas las posibilidades que tienen las personas de asumir, expresar y vivir su sexualidad, así como también de elegir las expresiones, orientaciones e identidades sexuales según su preferencia. Reconoce la pluralidad y variedad de posibilidades que existen.'
+      },
+       {
+        icon: '+',
+        title: 'LGBTIQA+',
+        description: 'Acrónimo comúnmente utilizado para denominar la diversidad de orientaciones e identidades de género. Se refiere a: Lesbiana, Gay, Transgénero, Bisexual, Intersexual, Queer, Asexual y más.'
+      },
       {
         icon: 'G',
         title: 'Gay',
@@ -18,21 +34,9 @@ export const sectionsData = {
         title: 'Bisexual',
         description: 'Persona que siente atracción emocional, afectiva y sexual hacia hombres y mujeres.'
       },
-      {
-        icon: '+',
-        title: 'LGBTIQA+',
-        description: 'Acrónimo comúnmente utilizado para denominar la diversidad de orientaciones e identidades de género. Se refiere a: Lesbiana, Gay, Transgénero, Bisexual, Intersexual, Queer, Asexual y más.'
-      },
-      {
-        icon: '🌈',
-        title: 'Diversidades Sexuales',
-        description: 'Se refiere a todas las posibilidades que tienen las personas de asumir, expresar y vivir su sexualidad, así como también de elegir las expresiones, orientaciones e identidades sexuales según su preferencia. Reconoce la pluralidad y variedad de posibilidades que existen.'
-      },
-      {
-        icon: '⚠',
-        title: 'Heteronormatividad',
-        description: 'Se le considera como un modelo social y cultural que impone que la heterosexualidad sea la única orientación sexual \'normal\', natural y aceptada.'
-      },
+     
+      
+    
       {
         icon: '✋',
         title: 'Homofobia',

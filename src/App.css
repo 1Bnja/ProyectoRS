@@ -455,6 +455,26 @@ footer p {
   text-align: justify;
 }
 
+.modal-description {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+  border-left: 4px solid var(--primary-green);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.modal-description p {
+  color: var(--text-dark);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin: 0;
+  text-align: justify;
+  text-align-last: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .modal-content-wide {
   max-width: 900px;
 }
@@ -462,29 +482,30 @@ footer p {
 .modal-content-wide h3 {
   color: var(--dark-green);
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
 .additional-flags-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .additional-flag-card {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: white;
   border-radius: 12px;
   padding: 1.5rem;
   cursor: pointer;
-  transition: all 0.3s;
-  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .additional-flag-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border-color: var(--primary-green);
 }
 
 .additional-flag-image {
@@ -492,23 +513,20 @@ footer p {
   max-width: 200px;
   height: auto;
   border-radius: 8px;
-  margin: 0 auto 1rem;
-  display: block;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
 }
 
 .additional-flag-card h4 {
   color: var(--dark-green);
   font-size: 1.3rem;
   margin-bottom: 0.8rem;
-  text-align: center;
 }
 
 .additional-flag-card p {
-  color: var(--text-light);
+  color: var(--text-dark);
   font-size: 0.95rem;
   line-height: 1.6;
-  text-align: center;
+  text-align: justify;
 }
 
 @media (max-width: 768px) {
