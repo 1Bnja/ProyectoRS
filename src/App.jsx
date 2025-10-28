@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Navigation from './components/Navigation'
 import IntroSection from './components/IntroSection'
 import ContentSection from './components/ContentSection'
+import QRSection from './components/QRSection'
 import Footer from './components/Footer'
 import { sectionsData } from './data/sectionsData'
 import './App.css'
@@ -17,7 +18,6 @@ function App() {
   }
 
   useEffect(() => {
-    // Animación de entrada
     document.body.style.opacity = '0'
     setTimeout(() => {
       document.body.style.transition = 'opacity 0.5s'
@@ -83,6 +83,12 @@ function App() {
               collapsible={true}
             />
           </div>
+        )}
+
+        {activeSection === 'kahoot' && (
+          <section id="kahoot" className="section active">
+            <QRSection />
+          </section>
         )}
       </main>
 
