@@ -9,6 +9,9 @@ import Queer from '../assets/Queer.png'
 import Asexual from '../assets/Asexual.png'
 import pansexual from '../assets/pansexual.png'
 import NonBinary from '../assets/Nonbinary.png'
+import Aromantic from '../assets/Aromantic.webp'
+import generofluido from '../assets/generofluido.png'
+import Heterosexual from '../assets/Heterosexual.png'
 
 
 function IntroSection() {
@@ -78,7 +81,26 @@ function IntroSection() {
       alt: 'Bandera no binaria',
       title: 'Bandera No Binaria',
       description: 'La bandera no binaria representa a las personas cuya identidad de género no se ajusta exclusivamente a las categorías de hombre o mujer. El amarillo representa géneros fuera del binario, el blanco la ausencia de género, el morado la mezcla de géneros, y el negro todos los géneros.'
+    },
+    {
+      src: Aromantic,
+      alt: 'Bandera aromántica',
+      title: 'Bandera Aromántica',
+      description: 'La bandera aromántica representa a las personas que experimentan poca o ninguna atracción romántica hacia otros. El verde representa la aromanticidad, el blanco la comunidad y el negro la falta de atracción romántica.'
+    },
+    {
+      src: generofluido,
+      alt: 'Bandera de género fluido',
+      title: 'Bandera de Género Fluido',
+      description: 'La bandera de género fluido representa a las personas cuya identidad de género no es fija y puede cambiar con el tiempo. Los colores de la bandera simbolizan la fluidez y la diversidad de las identidades de género.'
+    },
+    {
+      src: Heterosexual,
+      alt: 'Bandera heterosexual',
+      title: 'Bandera Heterosexual',
+      description: 'La bandera heterosexual representa a las personas que se sienten atraídas romántica y sexualmente hacia personas del sexo opuesto. Los colores de la bandera simbolizan la diversidad dentro de la heterosexualidad y la importancia de la inclusión.'
     }
+
   ]
 
   return (
@@ -170,6 +192,12 @@ function IntroSection() {
               ✕
             </button>
             <h3>Más Banderas de la Comunidad</h3>
+             <div className="modal-description">
+              <p>
+                El símbolo +, comúnmente añadido al final de siglas como "LGBTQ+", es un signo de inclusión que significa "y más". Su función es representar y acoger a todas las demás identidades de género y orientaciones sexuales que no están explícitamente cubiertas por las letras principales, como pueden ser personas intersexuales, asexuales, pansexuales o de género fluido. De esta manera, se busca asegurar que todos los miembros de la comunidad se sientan reconocidos y parte del colectivo, sin necesidad de alargar el acrónimo indefinidamente.
+              </p>
+            </div>
+            
             <div className="additional-flags-grid">
               {additionalFlags.map((flag, index) => (
                 <div 
