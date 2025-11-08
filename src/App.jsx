@@ -85,6 +85,17 @@ function App() {
           </div>
         )}
 
+        {activeSection === 'contactos' && (
+          <div className='section active'>
+            <ContentSection
+              title={sectionsData.contactos.title}
+              description={sectionsData.contactos.description}
+              cards={sectionsData.contactos.cards}
+              collapsible={false}
+            />
+          </div>
+        )}
+
         {activeSection === 'kahoot' && (
           <section id="kahoot" className="section active">
             <QRSection />
