@@ -121,5 +121,42 @@ export const sectionsData = {
         description: 'Persona cuya identidad de género corresponde con el sexo asignado al nacer.'
       }
     ]
+  },
+   contactos: {
+    title: 'Contactos de Apoyo',
+    description: 'Si necesitas apoyo, orientación o simplemente alguien con quien hablar, aquí tienes una lista de organizaciones y recursos que pueden ayudarte en temas relacionados con la diversidad sexual e identidad de género.',
+    cards: [
+      {
+        icon: '📞',
+        title: 'Fono Violencia de Género',
+        description: 'Si has vivido o eres testigo de violencia de género, puedes llamar al 1455 o escribir por WhatsApp al +56 9 9700 7000. Atención confidencial y gratuita las 24 horas.'
+      },
+      {
+        icon: '💬',
+        title: 'Hablemos de Todo',
+        description: 'Iniciativa del Instituto Nacional de la Juventud (INJUV) de Chile, dirigida a jóvenes de 15 a 29 años. Chat de atención psicosocial donde puedes hablar sobre cualquier tema que te preocupe en un espacio seguro y confidencial.'
+      },
+      {
+        icon: '🌐',
+        title: 'MOVILH',
+        description: 'Movimiento de Integración y Liberación Homosexual. Organización que trabaja por los derechos de la comunidad LGBTIQ+ en Chile. Visita: www.movilh.cl'
+      },
+      {
+        icon: '🏳️‍🌈',
+        title: 'Fundación Todo Mejora',
+        description: 'Organización que previene el suicidio en jóvenes LGBTIQ+ a través de mensajes de esperanza y apoyo. Ofrece recursos y orientación para jóvenes y sus familias. Visita: www.todomejora.org'
+      },
+      {
+        icon: '⚖️',
+        title: 'Fundación Iguales',
+        description: 'Organización que promueve la igualdad de derechos de las personas LGBTIQ+ en Chile. Ofrece asesoría legal y trabaja por la no discriminación. Visita: www.iguales.cl'
+      },
+      {
+        icon: '🏳️‍⚧️',
+        title: 'OTD Chile',
+        description: 'Organizando Trans Diversidades. Organización que trabaja por los derechos de las personas trans y de género no conforme en Chile. Ofrece orientación, apoyo y recursos. Visita: www.otdchile.org'
+      }
+    ]
   }
 }
+
