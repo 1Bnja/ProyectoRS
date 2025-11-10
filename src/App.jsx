@@ -47,7 +47,8 @@ function App() {
               title={sectionsData.sexualidad.title}
               description={sectionsData.sexualidad.description}
               cards={sectionsData.sexualidad.cards}
-              collapsible={true}
+              collapsible={false}
+              carousel={true}
             />
           </div>
         )}
@@ -58,7 +59,8 @@ function App() {
               title={sectionsData.genero.title}
               description={sectionsData.genero.description}
               cards={sectionsData.genero.cards}
-              collapsible={true}
+              collapsible={false}
+              carousel={true}
             />
           </div>
         )}
@@ -69,7 +71,8 @@ function App() {
               title={sectionsData.sexo.title}
               description={sectionsData.sexo.description}
               cards={sectionsData.sexo.cards}
-              collapsible={true}
+              collapsible={false}
+              carousel={true}
             />
           </div>
         )}
@@ -80,7 +83,20 @@ function App() {
               title={sectionsData.identidad.title}
               description={sectionsData.identidad.description}
               cards={sectionsData.identidad.cards}
-              collapsible={true}
+              collapsible={false}
+              carousel={true}
+            />
+          </div>
+        )}
+
+        {activeSection === 'contactos' && (
+          <div className='section active'>
+            <ContentSection
+              title={sectionsData.contactos.title}
+              description={sectionsData.contactos.description}
+              cards={sectionsData.contactos.cards}
+              collapsible={false}
+              carousel={false}
             />
           </div>
         )}
