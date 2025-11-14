@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Navigation from './components/Navigation'
 import IntroSection from './components/IntroSection'
 import ContentSection from './components/ContentSection'
+import Timeline from './components/Timeline'
 import QRSection from './components/QRSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
@@ -39,6 +40,12 @@ function App() {
         {activeSection === 'inicio' && (
           <section id="inicio" className="section active">
             <IntroSection />
+          </section>
+        )}
+
+        {activeSection === 'historia' && (
+          <section id="historia" className="section active">
+            <Timeline />
           </section>
         )}
 
