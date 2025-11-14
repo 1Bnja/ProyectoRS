@@ -1,13 +1,14 @@
 function Navigation({ activeSection, onSectionChange }) {
   const sections = [
     { id: 'inicio', label: 'Inicio' },
+    { id: 'historia', label: 'Historia' },
     { id: 'sexualidad', label: 'Sexualidad' },
     { id: 'genero', label: 'Género' },
     { id: 'sexo', label: 'Sexo' },
     { id: 'identidad', label: 'Identidad' },
     { id: 'contactos', label: 'Contactos' },
     { id: 'kahoot', label: 'Kahoot' }
-   
+
   ]
 
   return (
