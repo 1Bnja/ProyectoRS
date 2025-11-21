@@ -14,7 +14,7 @@ function ContactSection() {
       availability: '24/7',
       description: 'Atención confidencial y gratuita para víctimas y testigos de violencia de género.',
       icon: MdPhone,
-      color: '#FF6B6B'
+      color: '#FF0018' // Rojo - Rainbow 1
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ function ContactSection() {
       availability: 'Lunes a Viernes',
       description: 'Chat de atención psicosocial para jóvenes de 15 a 29 años. Espacio seguro y confidencial.',
       icon: MdChat,
-      color: '#4ECDC4'
+      color: '#FFA52C' // Naranja - Rainbow 2
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ function ContactSection() {
       website: 'www.movilh.cl',
       description: 'Defensa de los derechos de la comunidad LGBTIQ+ en Chile.',
       icon: MdPublic,
-      color: '#95E1D3'
+      color: '#FFFF41' // Amarillo - Rainbow 3
     },
     {
       id: 4,
@@ -43,7 +43,7 @@ function ContactSection() {
       website: 'www.todomejora.org',
       description: 'Prevención del suicidio en jóvenes LGBTIQ+. Mensajes de esperanza y recursos de apoyo.',
       icon: MdFavorite,
-      color: '#F38181'
+      color: '#008018' // Verde - Rainbow 4
     },
     {
       id: 5,
@@ -52,7 +52,7 @@ function ContactSection() {
       website: 'www.iguales.cl',
       description: 'Promoción de la igualdad de derechos. Asesoría legal y lucha contra la discriminación.',
       icon: MdGavel,
-      color: '#AA96DA'
+      color: '#0000F9' // Azul - Rainbow 5
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ function ContactSection() {
       website: 'www.otdchile.org',
       description: 'Derechos de personas trans y de género no conforme. Orientación, apoyo y recursos.',
       icon: MdGroups,
-      color: '#FCBAD3'
+      color: '#86007D' // Morado - Rainbow 6
     }
   ]
 
