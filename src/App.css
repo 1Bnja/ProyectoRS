@@ -108,6 +108,48 @@ header {
 nav {
   background: var(--primary-green);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2001;
+  width: 60px;
+  height: 60px;
+}
+
+.hamburger-line {
+  width: 28px;
+  height: 3px;
+  background: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 3px;
+  display: block;
+}
+
+.hamburger-line.open:first-child {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-line.open:last-child {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 .nav-content {
@@ -213,19 +255,36 @@ main {
 }
 
 .card {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  border-left: 5px solid var(--primary-green);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   padding: clamp(1.25rem, 3vw, 1.75rem);
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: all 0.3s;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(232, 245, 233, 0.4) 0%, rgba(241, 248, 244, 0.2) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
 }
 
 .card:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-left-width: 6px;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(76, 175, 80, 0.15);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card h3 {
@@ -235,6 +294,8 @@ main {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  position: relative;
+  z-index: 1;
 }
 
 .card-icon {
@@ -248,12 +309,16 @@ main {
   color: white;
   font-size: 0.8rem;
   font-weight: bold;
+  position: relative;
+  z-index: 1;
 }
 
 .card p {
   color: var(--text-light);
   line-height: 1.8;
   font-size: clamp(1rem, 2vw, 1.1rem);
+  position: relative;
+  z-index: 1;
 }
 
 .intro-section {
@@ -289,6 +354,8 @@ main {
   flex-wrap: wrap;
   margin-top: clamp(2rem, 4vw, 3rem);
   padding-bottom: clamp(1rem, 2vw, 1.5rem);
+  position: relative;
+  z-index: 1;
 }
 
 .diversity-icon {
@@ -302,12 +369,14 @@ main {
   color: white;
   animation: float 3s ease-in-out infinite;
   position: relative;
+  z-index: 1;
 }
 
 .diversity-icon:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
 }
 
 .flag-letter {
@@ -380,7 +449,7 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
+  z-index: 3000;
   padding: 1rem;
   animation: fadeIn 0.3s ease;
 }
@@ -457,12 +526,12 @@ footer p {
 }
 
 .modal-description {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
-  border-left: 4px solid var(--primary-green);
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 50%, #fafafa 100%);
   border-radius: 12px;
   padding: 1.5rem;
   margin: 1.5rem 0;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.1);
 }
 
 .modal-description p {
@@ -495,18 +564,37 @@ footer p {
 }
 
 .additional-flag-card {
-  background: white;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 16px;
   padding: 1.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.additional-flag-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(232, 245, 233, 0.4) 0%, rgba(241, 248, 244, 0.2) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
 }
 
 .additional-flag-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(76, 175, 80, 0.15);
+}
+
+.additional-flag-card:hover::before {
+  opacity: 1;
 }
 
 .additional-flag-image {
@@ -515,12 +603,16 @@ footer p {
   height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .additional-flag-card h4 {
   color: var(--dark-green);
   font-size: 1.3rem;
   margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
 }
 
 .additional-flag-card p {
@@ -528,6 +620,8 @@ footer p {
   font-size: 0.95rem;
   line-height: 1.6;
   text-align: justify;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -560,9 +654,42 @@ footer p {
     font-size: clamp(0.9rem, 3.5vw, 1rem);
   }
 
+  /* Menú Hamburguesa */
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary-green);
+    flex-direction: column;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 2000;
+  }
+
+  .nav-content.open {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
   .nav-btn {
-    padding: 0.85rem 1.1rem;
-    font-size: 0.95rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-left: 3px solid transparent;
+    text-align: left;
+  }
+
+  .nav-btn.active {
+    border-left-color: white;
+    border-bottom-color: rgba(255,255,255,0.1);
   }
 
   .section-header h2 {
@@ -604,14 +731,6 @@ footer p {
     width: clamp(140px, 40vw, 200px);
   }
 
-  .nav-btn {
-    flex: 1 1 calc(50% - 0.5rem);
-    white-space: normal;
-    text-align: center;
-    padding: 0.75rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
   .intro-section {
     padding: 2rem 1rem;
   }
@@ -637,17 +756,6 @@ footer p {
 
   .header-text p {
     font-size: clamp(0.85rem, 3.8vw, 0.95rem);
-  }
-
-  .nav-content {
-    justify-content: flex-start;
-    padding: 0 0.5rem;
-  }
-
-  .nav-btn {
-    flex: 1 1 100%;
-    padding: 0.9rem 0.8rem;
-    font-size: 0.9rem;
   }
 
   .card {
@@ -695,11 +803,6 @@ footer p {
 
   .header-text p {
     font-size: 0.8rem;
-  }
-
-  .nav-btn {
-    padding: 0.8rem 0.6rem;
-    font-size: 0.85rem;
   }
 
   .diversity-icon {
@@ -920,20 +1023,24 @@ footer p {
   margin: 0 auto;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border: none;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: clamp(2.5rem, 5vw, 3.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   animation: slideIn 0.5s ease-out;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .carousel-content .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 50px rgba(76, 175, 80, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(76, 175, 80, 0.15);
   border: none;
+}
+
+.carousel-content .card:hover::before {
+  opacity: 1;
 }
 
 .carousel-content .card h3 {
@@ -946,6 +1053,8 @@ footer p {
   gap: 1rem;
   text-align: center;
   line-height: 1.2;
+  position: relative;
+  z-index: 1;
 }
 
 .carousel-content .card h3 .card-icon {
@@ -964,6 +1073,8 @@ footer p {
   line-height: 1.8;
   text-align: center;
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes slideIn {
@@ -1161,12 +1272,11 @@ footer p {
 }
 
 .contact-card {
-  background: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border-radius: 16px;
   padding: clamp(1.5rem, 3vw, 2rem);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-left: 4px solid var(--card-color);
   position: relative;
   overflow: hidden;
 }
@@ -1177,15 +1287,16 @@ footer p {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--card-color), transparent);
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(232, 245, 233, 0.4) 0%, rgba(241, 248, 244, 0.2) 50%, transparent 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  border-radius: 16px;
 }
 
 .contact-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 40px rgba(76, 175, 80, 0.15);
 }
 
 .contact-card:hover::before {
@@ -1199,6 +1310,8 @@ footer p {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid #f0f0f0;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-icon {
@@ -1236,6 +1349,8 @@ footer p {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-full-name {
@@ -1330,11 +1445,11 @@ footer p {
 }
 
 .contact-footer {
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.1));
-  border-left: 4px solid var(--primary-green);
+  background: linear-gradient(135deg, rgba(232, 245, 233, 0.6) 0%, rgba(241, 248, 244, 0.4) 50%, rgba(255, 255, 255, 0.3) 100%);
   border-radius: 12px;
   padding: clamp(1.5rem, 3vw, 2rem);
   text-align: center;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.1);
 }
 
 .contact-footer p {
