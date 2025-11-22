@@ -5,7 +5,7 @@ import Navigation from './components/Navigation'
 import IntroSection from './components/IntroSection'
 import ContentSection from './components/ContentSection'
 import Timeline from './components/Timeline'
-import QRSection from './components/QRSection'
+import GamesSection from './components/GamesSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import { sectionsData } from './data/sectionsData'
@@ -103,9 +103,9 @@ function App() {
           </div>
         )}
 
-        {activeSection === 'kahoot' && (
-          <section id="kahoot" className="section active">
-            <QRSection />
+        {activeSection === 'minijuegos' && (
+          <section id="minijuegos" className="section active">
+            <GamesSection />
           </section>
         )}
       </main>
