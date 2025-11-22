@@ -1022,40 +1022,41 @@ footer p {
   position: relative;
   max-width: 1100px;
   margin: 0 auto clamp(2rem, 4vw, 3rem) auto;
-  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 3vw, 2rem);
+  padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 3vw, 2rem);
   background: white;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
 .carousel-content {
-  min-height: 400px;
+  min-height: clamp(350px, 60vh, 500px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 clamp(4rem, 8vw, 6rem);
+  padding: 0 clamp(3.5rem, 8vw, 6rem);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .carousel-content .card {
   width: 100%;
-  max-width: 700px;
-  min-height: 320px;
+  max-width: 750px;
+  min-height: clamp(400px, 70vh, 600px);
   margin: 0 auto;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border: none;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: clamp(2.5rem, 5vw, 3.5rem);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: clamp(2rem, 4vw, 3.5rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   animation: slideIn 0.5s ease-out;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
 }
 
 .carousel-content .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(76, 175, 80, 0.15);
   border: none;
 }
@@ -1066,16 +1067,17 @@ footer p {
 
 .carousel-content .card h3 {
   color: var(--primary-green);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: clamp(0.8rem, 2vw, 1.2rem);
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.3;
   position: relative;
   z-index: 1;
+  flex-wrap: wrap;
 }
 
 .carousel-content .card h3 .card-icon {
@@ -1083,19 +1085,22 @@ footer p {
   height: auto;
   background: none;
   border-radius: 0;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   color: var(--primary-green);
   display: inline-block;
+  flex-shrink: 0;
 }
 
 .carousel-content .card p {
   color: var(--text-dark);
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   line-height: 1.8;
   text-align: center;
-  margin: 0;
+  margin: 0 0 clamp(1rem, 3vw, 1.5rem) 0;
   position: relative;
   z-index: 1;
+  hyphens: auto;
+  word-wrap: break-word;
 }
 
 @keyframes slideIn {
@@ -1116,24 +1121,23 @@ footer p {
   background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
   color: white;
   border: none;
-  width: clamp(55px, 9vw, 65px);
-  height: clamp(55px, 9vw, 65px);
+  width: clamp(45px, 8vw, 65px);
+  height: clamp(45px, 8vw, 65px);
   border-radius: 50%;
-  font-size: clamp(2.2rem, 5vw, 2.8rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
-  line-height: 1;
+  box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
 }
 
 .carousel-btn:hover:not(:disabled) {
   background: linear-gradient(135deg, var(--dark-green), #1b5e20);
-  transform: translateY(-50%) scale(1.12);
-  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 25px rgba(76, 175, 80, 0.6);
 }
 
 .carousel-btn:active:not(:disabled) {
@@ -1146,148 +1150,329 @@ footer p {
 }
 
 .carousel-btn-prev {
-  left: clamp(0.5rem, 2vw, 1rem);
+  left: clamp(0.3rem, 1.5vw, 1rem);
 }
 
 .carousel-btn-next {
-  right: clamp(0.5rem, 2vw, 1rem);
+  right: clamp(0.3rem, 1.5vw, 1rem);
 }
 
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  gap: clamp(1rem, 2.5vw, 1.3rem);
-  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  gap: clamp(0.8rem, 2vw, 1.3rem);
+  margin-top: clamp(2rem, 4vw, 3.5rem);
   flex-wrap: wrap;
-  padding: 0 1rem;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
 .carousel-indicator {
-  width: clamp(14px, 2.5vw, 16px);
-  height: clamp(14px, 2.5vw, 16px);
+  width: clamp(12px, 2.5vw, 16px);
+  height: clamp(12px, 2.5vw, 16px);
   border-radius: 50%;
-  border: 3px solid var(--primary-green);
+  border: 2px solid var(--primary-green);
   background: transparent;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0;
+  flex-shrink: 0;
 }
 
 .carousel-indicator:hover:not(.active) {
-  transform: scale(1.3);
+  transform: scale(1.25);
   background: rgba(76, 175, 80, 0.3);
-  border-width: 3px;
+  border-width: 2px;
 }
 
 .carousel-indicator.active {
   background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-  transform: scale(1.5);
-  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2);
+  transform: scale(1.4);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
   border: none;
 }
 
-@media (max-width: 768px) {
+/* Tablets */
+@media (max-width: 1024px) {
   .carousel-container {
-    padding: 2.5rem 1rem;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 2vw, 1.5rem);
   }
 
   .carousel-content {
-    padding: 0 clamp(3.5rem, 12vw, 5rem);
-    min-height: 420px;
+    padding: 0 clamp(3rem, 10vw, 5rem);
+    min-height: clamp(380px, 65vh, 520px);
   }
 
   .carousel-content .card {
-    min-height: 340px;
-    padding: 2rem 1.5rem;
+    min-height: clamp(420px, 75vh, 580px);
+    padding: clamp(1.8rem, 3.5vw, 3rem);
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: clamp(1.8rem, 4vw, 2.5rem) clamp(0.8rem, 2vw, 1.2rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .carousel-content {
+    padding: 0 clamp(2.8rem, 12vw, 4.5rem);
+    min-height: clamp(400px, 70vh, 550px);
+  }
+
+  .carousel-content .card {
+    min-height: clamp(450px, 80vh, 620px);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border-radius: 16px;
+  }
+
+  .carousel-content .card h3 {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin-bottom: clamp(0.8rem, 2.5vw, 1.2rem);
+    gap: clamp(0.6rem, 2vw, 1rem);
+  }
+
+  .carousel-content .card h3 .card-icon {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .carousel-content .card p {
+    font-size: clamp(0.95rem, 3vw, 1.15rem);
+    line-height: 1.7;
   }
 
   .carousel-btn {
-    width: clamp(48px, 11vw, 55px);
-    height: clamp(48px, 11vw, 55px);
-    font-size: clamp(1.8rem, 6vw, 2rem);
+    width: clamp(42px, 10vw, 50px);
+    height: clamp(42px, 10vw, 50px);
+    font-size: clamp(1.6rem, 5vw, 2rem);
   }
 
   .carousel-btn-prev {
-    left: 0.5rem;
+    left: clamp(0.25rem, 1vw, 0.5rem);
   }
 
   .carousel-btn-next {
-    right: 0.5rem;
+    right: clamp(0.25rem, 1vw, 0.5rem);
   }
 
   .carousel-indicators {
-    margin-top: 2.5rem;
-    gap: 0.9rem;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    gap: clamp(0.6rem, 1.5vw, 1rem);
+  }
+
+  .carousel-indicator {
+    width: clamp(10px, 3vw, 14px);
+    height: clamp(10px, 3vw, 14px);
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(0.6rem, 2vw, 1rem);
+    border-radius: 12px;
+  }
+
+  .carousel-content {
+    padding: 0 clamp(2.5rem, 13vw, 4rem);
+    min-height: clamp(450px, 75vh, 600px);
+  }
+
+  .carousel-content .card {
+    min-height: clamp(500px, 85vh, 700px);
+    padding: clamp(1.3rem, 3vw, 2rem);
+    border-radius: 14px;
+  }
+
+  .carousel-content .card h3 {
+    font-size: clamp(1.25rem, 5.5vw, 1.8rem);
+    margin-bottom: clamp(0.7rem, 2vw, 1rem);
+    gap: clamp(0.5rem, 1.5vw, 0.8rem);
+    flex-direction: column;
+  }
+
+  .carousel-content .card h3 .card-icon {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .carousel-content .card p {
+    font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+    line-height: 1.65;
+    text-align: justify;
+  }
+
+  .carousel-btn {
+    width: clamp(38px, 11vw, 45px);
+    height: clamp(38px, 11vw, 45px);
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+
+  .carousel-btn-prev {
+    left: 0.2rem;
+  }
+
+  .carousel-btn-next {
+    right: 0.2rem;
+  }
+
+  .carousel-indicators {
+    gap: clamp(0.5rem, 1.5vw, 0.8rem);
+    margin-top: clamp(1.2rem, 3vw, 2rem);
+  }
+
+  .carousel-indicator {
+    width: clamp(9px, 3.5vw, 12px);
+    height: clamp(9px, 3.5vw, 12px);
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+  .carousel-container {
+    padding: 1.2rem 0.5rem;
+  }
+
+  .carousel-content {
+    padding: 0 2.2rem;
+    min-height: 480px;
+  }
+
+  .carousel-content .card {
+    min-height: 540px;
+    padding: 1.2rem;
+  }
+
+  .carousel-content .card h3 {
+    font-size: 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .carousel-content .card h3 .card-icon {
+    font-size: 1.5rem;
+  }
+
+  .carousel-content .card p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+
+  .carousel-indicator {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Card Image Styles */
+.card-image-wrapper {
+  width: 100%;
+  height: clamp(200px, 32vh, 300px);
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: clamp(1rem, 2.5vw, 1.5rem);
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8e8e8 100%);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Estilos específicos para carrusel */
+.carousel-content .card-image-wrapper {
+  height: clamp(220px, 38vh, 340px);
+  margin-top: clamp(1.2rem, 3vw, 2rem);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  padding: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+
+@media (max-width: 768px) {
+  .card-image-wrapper {
+    height: clamp(180px, 30vh, 260px);
+    margin-top: clamp(0.8rem, 2vw, 1.2rem);
+    padding: 0.6rem;
+  }
+
+  .carousel-content .card-image-wrapper {
+    height: clamp(200px, 35vh, 300px);
+    margin-top: clamp(1rem, 2.5vw, 1.5rem);
+    padding: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
-  .carousel-container {
-    padding: 2rem 0.8rem;
+  .card-image-wrapper {
+    height: clamp(160px, 28vh, 220px);
+    margin-top: clamp(0.7rem, 1.5vw, 1rem);
+    border-radius: 10px;
+    padding: 0.5rem;
   }
 
-  .carousel-content {
-    padding: 0 clamp(3rem, 14vw, 4rem);
-    min-height: 460px;
-  }
-
-  .carousel-content .card {
-    min-height: 380px;
-    padding: 1.8rem 1.2rem;
-  }
-
-  .carousel-content .card h3 {
-    margin-bottom: 1.2rem;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .carousel-btn {
-    width: clamp(42px, 13vw, 48px);
-    height: clamp(42px, 13vw, 48px);
-    font-size: clamp(1.6rem, 7vw, 1.8rem);
-  }
-
-  .carousel-indicators {
-    gap: 0.7rem;
-    margin-top: 2rem;
-  }
-
-  .carousel-indicator {
-    width: clamp(12px, 3.5vw, 14px);
-    height: clamp(12px, 3.5vw, 14px);
+  .carousel-content .card-image-wrapper {
+    height: clamp(180px, 32vh, 260px);
+    margin-top: clamp(0.8rem, 2vw, 1.2rem);
+    padding: 0.6rem;
   }
 }
+
+@media (max-width: 360px) {
+  .card-image-wrapper {
+    height: 150px;
+    padding: 0.4rem;
+  }
+
+  .carousel-content .card-image-wrapper {
+    height: 170px;
+    padding: 0.5rem;
+  }
+}
+
 /* Contact Section Styles */
 .contact-section {
-  max-width: 1400px;
+  background: white;
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
 }
 
 .contact-header {
   text-align: center;
-  margin-bottom: clamp(3rem, 6vw, 4rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .contact-header h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--primary-green);
+  color: var(--dark-green);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 1rem;
-  font-weight: 700;
 }
 
 .contact-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--text-light);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
@@ -1298,6 +1483,7 @@ footer p {
   padding: clamp(1.5rem, 3vw, 2rem);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 4px solid var(--card-color);
   position: relative;
   overflow: hidden;
 }
@@ -1328,109 +1514,99 @@ footer p {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #f0f0f0;
+  margin-bottom: 1.2rem;
   position: relative;
   z-index: 1;
 }
 
 .contact-icon {
-  font-size: clamp(2.5rem, 5vw, 3rem);
-  line-height: 1;
-  flex-shrink: 0;
-  color: var(--card-color);
+  width: clamp(48px, 8vw, 56px);
+  height: clamp(48px, 8vw, 56px);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  background: var(--card-color);
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .contact-title-group {
   flex: 1;
 }
 
-.contact-title-group h3 {
-  font-size: clamp(1.3rem, 3vw, 1.5rem);
-  color: var(--text-dark);
-  margin-bottom: 0.4rem;
-  font-weight: 600;
+.contact-card h3 {
+  color: var(--dark-green);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin: 0 0 0.3rem 0;
+  line-height: 1.3;
 }
 
 .contact-type {
   display: inline-block;
-  font-size: clamp(0.85rem, 2vw, 0.95rem);
-  color: white;
   background: var(--card-color);
-  padding: 0.3rem 0.8rem;
+  color: white;
+  padding: 0.25rem 0.75rem;
   border-radius: 20px;
-  font-weight: 500;
+  font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+  font-weight: 600;
 }
 
 .contact-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   position: relative;
   z-index: 1;
 }
 
-.contact-full-name {
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  color: var(--text-light);
-  font-style: italic;
-  margin: 0;
-}
-
+.contact-full-name,
 .contact-organization {
-  font-size: clamp(0.9rem, 2vw, 1rem);
   color: var(--primary-green);
-  font-weight: 500;
-  margin: 0;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  margin-bottom: 0.8rem;
 }
 
 .contact-description {
-  font-size: clamp(0.95rem, 2vw, 1.05rem);
   color: var(--text-dark);
-  line-height: 1.6;
-  margin: 0;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  margin-top: 0.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid #f0f0f0;
 }
 
 .contact-detail {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .detail-label {
-  font-size: clamp(0.9rem, 2vw, 1rem);
   color: var(--text-light);
+  font-size: clamp(0.85rem, 1.8vw, 0.9rem);
   font-weight: 600;
-  min-width: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .detail-value {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  flex: 1;
+  flex-wrap: wrap;
 }
 
 .detail-value a {
   color: var(--primary-green);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 600;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  transition: color 0.3s;
 }
 
 .detail-value a:hover {
@@ -1440,74 +1616,61 @@ footer p {
 
 .copy-btn {
   background: transparent;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--primary-green);
+  color: var(--primary-green);
+  padding: 0.25rem 0.5rem;
   border-radius: 6px;
-  padding: 0.3rem 0.5rem;
   cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-  line-height: 1;
+  font-size: 0.9rem;
+  transition: all 0.3s;
 }
 
 .copy-btn:hover {
   background: var(--primary-green);
-  border-color: var(--primary-green);
-  transform: scale(1.1);
+  color: white;
 }
 
 .availability-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
   color: white;
   padding: 0.4rem 1rem;
   border-radius: 20px;
-  font-size: clamp(0.85rem, 2vw, 0.95rem);
-  font-weight: 500;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  font-weight: 600;
 }
 
 .contact-footer {
-  background: linear-gradient(135deg, rgba(232, 245, 233, 0.6) 0%, rgba(241, 248, 244, 0.4) 50%, rgba(255, 255, 255, 0.3) 100%);
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
   border-radius: 12px;
-  padding: clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(1.2rem, 3vw, 1.5rem);
   text-align: center;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.1);
 }
 
 .contact-footer p {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
   color: var(--text-dark);
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.7;
   margin: 0;
-  line-height: 1.6;
 }
 
 .contact-footer strong {
-  color: var(--primary-green);
+  color: var(--dark-green);
   font-weight: 700;
 }
 
 @media (max-width: 768px) {
+  .contact-section {
+    padding: 2rem 1.5rem;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .contact-detail {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-
-  .detail-label {
-    min-width: auto;
-  }
-
-  .detail-value {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
   .contact-card {
-    padding: 1.2rem;
+    padding: 1.5rem;
   }
 
   .contact-card-header {
@@ -1519,13 +1682,53 @@ footer p {
   .contact-title-group {
     text-align: center;
   }
+
+  .contact-info {
+    gap: 1rem;
+  }
+
+  .detail-value {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-card {
+    padding: 1.2rem;
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-description {
+    font-size: 0.9rem;
+  }
+
+  .copy-btn {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
 }
 
 /* Games Section Styles */
 .games-section {
+  background: white;
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
   max-width: 1200px;
   margin: 0 auto;
-  padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem);
 }
 
 .games-header {
@@ -1534,179 +1737,193 @@ footer p {
 }
 
 .games-header h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--primary-green);
+  color: var(--dark-green);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 1rem;
-  font-weight: 700;
 }
 
 .games-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--text-light);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .game-selector {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .game-selector-btn {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border: 3px solid transparent;
+  border: 2px solid #e0e0e0;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
   display: flex;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .game-selector-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(76, 175, 80, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.15);
   border-color: var(--primary-green);
 }
 
 .game-selector-btn.active {
-  border-color: var(--primary-green);
-  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
-  box-shadow: 0 8px 30px rgba(76, 175, 80, 0.25);
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+  border-color: var(--dark-green);
+  color: white;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
 }
 
 .game-icon {
-  font-size: 3rem;
-  line-height: 1;
+  font-size: clamp(2rem, 5vw, 3rem);
+  width: clamp(60px, 10vw, 80px);
+  height: clamp(60px, 10vw, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.game-selector-btn.active .game-icon {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .game-info {
-  text-align: left;
   flex: 1;
 }
 
 .game-info h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-bottom: 0.5rem;
   color: var(--dark-green);
-  font-size: 1.3rem;
-  margin-bottom: 0.3rem;
+}
+
+.game-selector-btn.active .game-info h3 {
+  color: white;
 }
 
 .game-info p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
   color: var(--text-light);
-  font-size: 0.95rem;
   margin: 0;
+  line-height: 1.5;
+}
+
+.game-selector-btn.active .game-info p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.game-content {
+  animation: fadeIn 0.5s;
 }
 
 /* Memory Game Styles */
 .memory-game-container {
-  background: white;
-  border-radius: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 16px;
   padding: clamp(2rem, 4vw, 3rem);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .game-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .game-header h2 {
   color: var(--dark-green);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 1rem;
 }
 
 .game-description {
   color: var(--text-light);
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
-  max-width: 600px;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  max-width: 700px;
   margin: 0 auto;
+  line-height: 1.7;
 }
 
 .memorization-banner {
-  background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
-  border: 3px solid #ffd54f;
-  border-radius: 16px;
-  padding: 1.5rem 2rem;
-  margin: 2rem 0;
-  box-shadow: 0 4px 20px rgba(255, 193, 7, 0.3);
-  animation: pulse 2s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+  color: white;
+  padding: clamp(1.2rem, 3vw, 1.5rem);
+  border-radius: 12px;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
 .memorization-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .memorization-icon {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.memorization-text {
-  text-align: left;
-}
-
-.memorization-title {
-  color: var(--dark-green);
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin: 0 0 0.3rem 0;
-}
-
-.memorization-countdown {
-  color: #f57c00;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 4px 20px rgba(255, 193, 7, 0.3);
-  }
-  50% {
-    transform: scale(1.02);
-    box-shadow: 0 6px 30px rgba(255, 193, 7, 0.5);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.memorization-text {
+  text-align: center;
+}
+
+.memorization-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.memorization-countdown {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 0;
+  opacity: 0.9;
 }
 
 .game-stats {
   display: flex;
   justify-content: center;
-  gap: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 2rem;
+  gap: clamp(2rem, 5vw, 3rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
   flex-wrap: wrap;
 }
 
 .stat-item {
   background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
-  padding: 1rem 2rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.15);
+  min-width: 150px;
 }
 
 .stat-label {
   display: block;
   color: var(--text-light);
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-  font-weight: 500;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  margin-bottom: 0.5rem;
 }
 
 .stat-value {
   display: block;
-  color: var(--primary-green);
-  font-size: 1.8rem;
+  color: var(--dark-green);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
 }
 
@@ -1714,7 +1931,7 @@ footer p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: clamp(0.8rem, 2vw, 1.2rem);
-  margin-bottom: 2rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -1724,13 +1941,18 @@ footer p {
   aspect-ratio: 1;
   cursor: pointer;
   perspective: 1000px;
-  position: relative;
+  transition: transform 0.2s;
+}
+
+.memory-card:hover {
+  transform: scale(1.05);
 }
 
 .card-inner {
   position: relative;
   width: 100%;
   height: 100%;
+  text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
@@ -1749,7 +1971,7 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .card-front {
@@ -1758,14 +1980,14 @@ footer p {
 
 .card-question {
   color: white;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: bold;
 }
 
 .card-back {
   background: white;
   transform: rotateY(180deg);
-  padding: 0.5rem;
+  padding: 8px;
 }
 
 .card-back img {
@@ -1776,34 +1998,30 @@ footer p {
 }
 
 .game-controls {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+  text-align: center;
 }
 
-.restart-btn {
+.restart-btn,
+.play-again-btn {
   background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
   color: white;
   border: none;
-  padding: 1rem 2.5rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
   font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
 
-.restart-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+.restart-btn:hover,
+.play-again-btn:hover {
+  background: linear-gradient(135deg, var(--dark-green), #1b5e20);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
 }
 
-.restart-btn:active {
-  transform: translateY(-1px);
-}
-
-/* Game Won Overlay */
 .game-won-overlay {
   position: fixed;
   top: 0;
@@ -1814,54 +2032,40 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 4000;
-  animation: fadeIn 0.3s ease;
+  z-index: 3000;
+  animation: fadeIn 0.3s;
 }
 
 .game-won-message {
   background: white;
+  padding: clamp(2rem, 5vw, 3rem);
   border-radius: 20px;
-  padding: 3rem 2rem;
   text-align: center;
   max-width: 500px;
-  width: 90%;
-  animation: slideUp 0.5s ease;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+  margin: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
 }
 
 .game-won-message h3 {
-  color: var(--primary-green);
-  font-size: 2.5rem;
+  color: var(--dark-green);
+  font-size: clamp(2rem, 5vw, 2.5rem);
   margin-bottom: 1rem;
 }
 
 .game-won-message p {
   color: var(--text-dark);
-  font-size: 1.2rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   margin-bottom: 2rem;
 }
 
-.play-again-btn {
-  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-  color: white;
-  border: none;
-  padding: 1rem 3rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-}
-
-.play-again-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
-}
-
-/* Responsive para el juego */
 @media (max-width: 768px) {
+  .games-section {
+    padding: 2rem 1.5rem;
+  }
+
   .memory-grid {
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.6rem;
   }
 
@@ -1870,83 +2074,44 @@ footer p {
   }
 
   .stat-item {
-    padding: 0.8rem 1.5rem;
+    min-width: 130px;
   }
 
-  .stat-value {
-    font-size: 1.5rem;
+  .game-selector-btn {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .memorization-banner {
-    padding: 1.2rem 1.5rem;
-  }
-
-  .memorization-content {
-    gap: 1rem;
-  }
-
-  .memorization-icon {
-    font-size: 2.5rem;
-  }
-
-  .memorization-title {
-    font-size: 1.1rem;
-  }
-
-  .memorization-countdown {
-    font-size: 1rem;
+  .game-info {
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  .memory-grid {
-    gap: 0.5rem;
-  }
-
-  .memory-game-container {
+  .games-section {
     padding: 1.5rem 1rem;
   }
 
-  .card-question {
-    font-size: 2rem;
+  .memory-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
   }
 
-  .game-won-message {
-    padding: 2rem 1.5rem;
+  .game-stats {
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .game-won-message h3 {
-    font-size: 2rem;
-  }
-
-  .game-won-message p {
-    font-size: 1rem;
-  }
-
-  .memorization-banner {
-    padding: 1rem;
+  .stat-item {
+    width: 100%;
   }
 
   .memorization-content {
     flex-direction: column;
-    gap: 0.8rem;
-    text-align: center;
   }
 
-  .memorization-text {
-    text-align: center;
-  }
-
-  .memorization-icon {
-    font-size: 2rem;
-  }
-
-  .memorization-title {
-    font-size: 1rem;
-  }
-
-  .memorization-countdown {
-    font-size: 0.95rem;
+  .game-selector {
+    gap: 1rem;
   }
 }
 
