@@ -21,6 +21,7 @@ function ContactSection() {
       name: 'Hablemos de Todo',
       type: 'Apoyo Psicosocial',
       organization: 'INJUV Chile',
+      website: 'www.injuv.gob.cl',
       availability: 'Lunes a Viernes',
       description: 'Chat de atención psicosocial para jóvenes de 15 a 29 años. Espacio seguro y confidencial.',
       icon: MdChat,
