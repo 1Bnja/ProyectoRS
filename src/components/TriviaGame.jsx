@@ -66,24 +66,24 @@ function TriviaGame() {
 
   const getScoreMessage = () => {
     const percentage = (score / 10) * 100
-    if (percentage === 100) return '¡Perfecto! Eres un experto en diversidad 🌟'
-    if (percentage >= 80) return '¡Excelente! Tienes muy buenos conocimientos 🎉'
-    if (percentage >= 60) return '¡Bien! Vas por buen camino 👍'
-    if (percentage >= 40) return 'Puedes mejorar, sigue aprendiendo 📚'
-    return 'Aún hay mucho por aprender, ¡no te rindas! 💪'
+    if (percentage === 100) return '¡Perfecto! Eres un experto en diversidad'
+    if (percentage >= 80) return '¡Excelente! Tienes muy buenos conocimientos'
+    if (percentage >= 60) return '¡Bien! Vas por buen camino'
+    if (percentage >= 40) return 'Puedes mejorar, sigue aprendiendo'
+    return 'Aún hay mucho por aprender, ¡no te rindas!'
   }
 
   if (!gameStarted && !gameFinished) {
     return (
       <div className="trivia-game-container">
         <div className="trivia-intro">
-          <h2>🎯 Trivia de Diversidad Sexual</h2>
+          <h2>Trivia de Diversidad Sexual</h2>
           <p className="trivia-description">
             Pon a prueba tus conocimientos sobre diversidad sexual e identidad de género. 
             Responde 10 preguntas en 60 segundos. ¡Buena suerte!
           </p>
           <div className="trivia-rules">
-            <h3>📋 Reglas del juego:</h3>
+            <h3>Reglas del juego:</h3>
             <ul>
               <li>Tienes <strong>60 segundos</strong> para responder todas las preguntas</li>
               <li>Son <strong>10 preguntas</strong> seleccionadas aleatoriamente</li>
@@ -93,7 +93,7 @@ function TriviaGame() {
             </ul>
           </div>
           <button className="trivia-start-btn" onClick={initializeGame}>
-            🚀 Comenzar Trivia
+            Comenzar Trivia
           </button>
         </div>
       </div>
@@ -104,7 +104,7 @@ function TriviaGame() {
     return (
       <div className="trivia-game-container">
         <div className="trivia-results">
-          <h2>🎊 ¡Juego Terminado!</h2>
+          <h2>¡Juego Terminado!</h2>
           <div className="trivia-score-display">
             <div className="trivia-score-number">{score}/10</div>
             <div className="trivia-score-percentage">{((score / 10) * 100).toFixed(0)}%</div>
@@ -121,7 +121,7 @@ function TriviaGame() {
             </div>
           </div>
           <button className="trivia-restart-btn" onClick={initializeGame}>
-            🔄 Jugar de Nuevo
+            Jugar de Nuevo
           </button>
         </div>
       </div>
@@ -145,7 +145,7 @@ function TriviaGame() {
           </span>
         </div>
         <div className={`trivia-timer ${timeLeft <= 10 ? 'warning' : ''}`}>
-          ⏱️ {timeLeft}s
+          Tiempo: {timeLeft}s
         </div>
       </div>
 

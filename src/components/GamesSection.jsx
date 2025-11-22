@@ -37,7 +37,6 @@ function GamesSection() {
             className={`game-selector-btn ${selectedGame === game.id ? 'active' : ''}`}
             onClick={() => setSelectedGame(game.id)}
           >
-            <span className="game-icon">{game.icon}</span>
             <div className="game-info">
               <h3>{game.name}</h3>
               <p>{game.description}</p>

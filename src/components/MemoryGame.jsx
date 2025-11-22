@@ -144,7 +144,7 @@ function MemoryGame() {
       {isMemorizing && (
         <div className="memorization-banner">
           <div className="memorization-content">
-            <span className="memorization-icon">👀</span>
+            <span className="memorization-icon"></span>
             <div className="memorization-text">
               <p className="memorization-title">¡Memoriza las posiciones!</p>
               <p className="memorization-countdown">El juego comenzará en {countdown} segundos</p>
