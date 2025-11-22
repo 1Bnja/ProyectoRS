@@ -1,4 +1,4 @@
-function Card({ icon, title, description }) {
+function Card({ icon, title, description, image }) {
   return (
     <div className="card">
       <h3>
@@ -6,6 +6,15 @@ function Card({ icon, title, description }) {
         {title}
       </h3>
       <p>{description}</p>
+      {image && (
+        <div className="card-image-wrapper">
+          <img 
+            src={image} 
+            alt={title}
+            className="card-image"
+          />
+        </div>
+      )}
     </div>
   )
 }

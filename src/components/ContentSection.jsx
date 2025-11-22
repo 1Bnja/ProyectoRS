@@ -198,6 +198,7 @@ function ContentSection({ title, description, cards, collapsible = false, carous
               icon={cards[currentIndex].icon}
               title={cards[currentIndex].title}
               description={cards[currentIndex].description}
+              image={cards[currentIndex].image}
             />
           </div>
 
@@ -232,6 +233,7 @@ function ContentSection({ title, description, cards, collapsible = false, carous
               icon={card.icon}
               title={card.title}
               description={card.description}
+              image={card.image}
             />
           ))}
         </div>
