@@ -4,7 +4,9 @@ import Header from './components/Header'
 import Navigation from './components/Navigation'
 import IntroSection from './components/IntroSection'
 import ContentSection from './components/ContentSection'
-import QRSection from './components/QRSection'
+import Timeline from './components/Timeline'
+import GamesSection from './components/GamesSection'
+import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import { sectionsData } from './data/sectionsData'
 import './App.css'
@@ -38,6 +40,12 @@ function App() {
         {activeSection === 'inicio' && (
           <section id="inicio" className="section active">
             <IntroSection />
+          </section>
+        )}
+
+        {activeSection === 'historia' && (
+          <section id="historia" className="section active">
+            <Timeline />
           </section>
         )}
 
@@ -91,19 +99,13 @@ function App() {
 
         {activeSection === 'contactos' && (
           <div className='section active'>
-            <ContentSection
-              title={sectionsData.contactos.title}
-              description={sectionsData.contactos.description}
-              cards={sectionsData.contactos.cards}
-              collapsible={false}
-              carousel={false}
-            />
+            <ContactSection />
           </div>
         )}
 
-        {activeSection === 'kahoot' && (
-          <section id="kahoot" className="section active">
-            <QRSection />
+        {activeSection === 'minijuegos' && (
+          <section id="minijuegos" className="section active">
+            <GamesSection />
           </section>
         )}
       </main>

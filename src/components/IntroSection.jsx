@@ -12,6 +12,9 @@ import NonBinary from '../assets/Nonbinary.png'
 import Aromantic from '../assets/Aromantic.webp'
 import generofluido from '../assets/generofluido.png'
 import Heterosexual from '../assets/Heterosexual.png'
+import Agenero from '../assets/Agenero.png'
+import Demisexual from '../assets/Demisexual.png'
+import Polisexual from '../assets/Polisexual.png'
 
 
 function IntroSection() {
@@ -99,6 +102,24 @@ function IntroSection() {
       alt: 'Bandera heterosexual',
       title: 'Bandera Heterosexual',
       description: 'La bandera heterosexual representa a las personas que se sienten atraídas romántica y sexualmente hacia personas del sexo opuesto. Los colores de la bandera simbolizan la diversidad dentro de la heterosexualidad y la importancia de la inclusión.'
+    },
+    {
+      src: Agenero,
+      alt: 'Bandera agénero',
+      title: 'Bandera Agénero',
+      description: 'La bandera agénero representa a las personas que no se identifican con ningún género en particular. El negro y blanco representan la ausencia de género, el gris representa la semi-ausencia de género, y el verde representa la no conformidad con el binario de género.'
+    },
+    {
+      src: Demisexual,
+      alt: 'Bandera demisexual',
+      title: 'Bandera Demisexual',
+      description: 'La bandera demisexual representa a las personas que solo experimentan atracción sexual después de formar un vínculo emocional fuerte con alguien. El triángulo negro representa la asexualidad, las franjas grises la zona gris entre sexual y asexual, el blanco la sexualidad, y el morado la comunidad.'
+    },
+    {
+      src: Polisexual,
+      alt: 'Bandera polisexual',
+      title: 'Bandera Polisexual',
+      description: 'La bandera polisexual representa a las personas que sienten atracción hacia múltiples géneros, pero no necesariamente todos. El rosa representa la atracción hacia mujeres, el azul hacia hombres, y el verde hacia personas de géneros no binarios.'
     }
 
   ]
@@ -107,11 +128,11 @@ function IntroSection() {
     <div className="intro-section">
       <h2>Bienvenidos</h2>
       <p>
-        Esta plataforma tiene como objetivo educar y promover el respeto hacia la 
-        diversidad sexual e identidad de género. Aquí encontrarás información clara 
+        Esta plataforma tiene como objetivo educar y promover el respeto hacia la
+        diversidad sexual e identidad de género. Aquí encontrarás información clara
         sobre conceptos fundamentales para construir una sociedad más inclusiva y respetuosa.
       </p>
-      
+
       <div className="diversity-icons">
         {mainFlags.map((flag, index) => (
           <button
@@ -146,6 +167,93 @@ function IntroSection() {
         >
           <span className="plus-symbol">+</span>
         </button>
+      </div>
+
+      {/* Cards de Misión y Visión */}
+      <div className="mission-vision-grid" style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'clamp(1.25rem, 4vw, 2rem)',
+        marginTop: 'clamp(2rem, 4vw, 3rem)',
+        width: '100%'
+      }}>
+        <div style={{
+          background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+          padding: 'clamp(0.9rem, 2vw, 1.2rem)',
+          borderRadius: '16px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h3 style={{
+            color: 'var(--dark-green)',
+            fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)',
+            marginBottom: '0.7rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.6rem'
+          }}>
+            <span style={{
+              width: '24px',
+              height: '24px',
+              background: 'var(--primary-green)',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              fontSize: '0.8rem',
+              fontWeight: 'bold'
+            }}>M</span>
+            Nuestra Misión
+          </h3>
+          <p style={{
+            color: 'var(--text-light)',
+            lineHeight: '1.6',
+            fontSize: 'clamp(1rem, 2vw, 1.1rem)',
+            textAlign: 'justify',
+            margin: 0
+          }}>
+            Promover el respeto y dignidad de la población LGBTIQANB+, coordinando y orientando acciones que fortalezcan la integración de la comunidad.
+          </p>
+        </div>
+
+        <div style={{
+          background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+          padding: 'clamp(0.9rem, 2vw, 1.2rem)',
+          borderRadius: '16px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <h3 style={{
+            color: 'var(--dark-green)',
+            fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)',
+            marginBottom: '0.7rem',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.6rem'
+          }}>
+            <span style={{
+              width: '24px',
+              height: '24px',
+              background: 'var(--primary-green)',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              fontSize: '0.8rem',
+              fontWeight: 'bold'
+            }}>V</span>
+            Nuestra Visión
+          </h3>
+          <p style={{
+            color: 'var(--text-light)',
+            lineHeight: '1.6',
+            fontSize: 'clamp(1rem, 2vw, 1.1rem)',
+            textAlign: 'justify',
+            margin: 0
+          }}>
+            El objetivo fundamental de la oficina es generar acciones que permitan impulsar el respeto a la diversidad y los derechos humanos, para que las personas pertenecientes a las disidencias sexo-genéricas sean tratadas de manera igualitaria dentro del territorio de Curicó.
+          </p>
+        </div>
       </div>
 
       {/* Modal para bandera individual */}
