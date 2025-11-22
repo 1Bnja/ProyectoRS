@@ -11,7 +11,7 @@ function Navigation({ activeSection, onSectionChange }) {
     { id: 'sexo', label: 'Sexo' },
     { id: 'identidad', label: 'Identidad' },
     { id: 'contactos', label: 'Contactos' },
-    { id: 'kahoot', label: 'Kahoot' }
+    { id: 'minijuegos', label: 'Minijuegos' }
   ]
 
   const handleSectionClick = (sectionId) => {
