@@ -12,6 +12,9 @@ import NonBinary from '../assets/Nonbinary.png'
 import Aromantic from '../assets/Aromantic.webp'
 import generofluido from '../assets/generofluido.png'
 import Heterosexual from '../assets/Heterosexual.png'
+import Agenero from '../assets/Agenero.png'
+import Demisexual from '../assets/Demisexual.png'
+import Polisexual from '../assets/Polisexual.png'
 
 
 function IntroSection() {
@@ -99,6 +102,24 @@ function IntroSection() {
       alt: 'Bandera heterosexual',
       title: 'Bandera Heterosexual',
       description: 'La bandera heterosexual representa a las personas que se sienten atraídas romántica y sexualmente hacia personas del sexo opuesto. Los colores de la bandera simbolizan la diversidad dentro de la heterosexualidad y la importancia de la inclusión.'
+    },
+    {
+      src: Agenero,
+      alt: 'Bandera agénero',
+      title: 'Bandera Agénero',
+      description: 'La bandera agénero representa a las personas que no se identifican con ningún género en particular. El negro y blanco representan la ausencia de género, el gris representa la semi-ausencia de género, y el verde representa la no conformidad con el binario de género.'
+    },
+    {
+      src: Demisexual,
+      alt: 'Bandera demisexual',
+      title: 'Bandera Demisexual',
+      description: 'La bandera demisexual representa a las personas que solo experimentan atracción sexual después de formar un vínculo emocional fuerte con alguien. El triángulo negro representa la asexualidad, las franjas grises la zona gris entre sexual y asexual, el blanco la sexualidad, y el morado la comunidad.'
+    },
+    {
+      src: Polisexual,
+      alt: 'Bandera polisexual',
+      title: 'Bandera Polisexual',
+      description: 'La bandera polisexual representa a las personas que sienten atracción hacia múltiples géneros, pero no necesariamente todos. El rosa representa la atracción hacia mujeres, el azul hacia hombres, y el verde hacia personas de géneros no binarios.'
     }
 
   ]
