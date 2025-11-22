@@ -79,88 +79,107 @@ function ContactSection() {
       <div className="contact-header">
         <h2>Contactos de Apoyo</h2>
         <p className="contact-subtitle">
-          Si necesitas apoyo, orientación o simplemente alguien con quien hablar, 
+          Si necesitas apoyo, orientación o simplemente alguien con quien hablar,
           aquí tienes recursos especializados en diversidad sexual e identidad de género.
         </p>
       </div>
 
-      <div className="contact-grid">
+      <div className="contact-cards-grid">
         {contacts.map((contact) => {
           const IconComponent = contact.icon
           return (
-            <div key={contact.id} className="contact-card" style={{ '--card-color': contact.color }}>
-              <div className="contact-card-header">
-                <div className="contact-icon">
+            <div key={contact.id} className="contact-card-modern">
+              <div className="contact-card-header-modern">
+                <div className="contact-icon-modern" style={{ background: contact.color }}>
                   <IconComponent />
                 </div>
-                <div className="contact-title-group">
+                <div className="contact-title-area">
                   <h3>{contact.name}</h3>
-                  <span className="contact-type">{contact.type}</span>
+                  <span className="contact-type-badge" style={{ background: contact.color }}>
+                    {contact.type}
+                  </span>
                 </div>
               </div>
 
-            <div className="contact-card-body">
-              {contact.fullName && (
-                <p className="contact-full-name">{contact.fullName}</p>
-              )}
-              {contact.organization && (
-                <p className="contact-organization">{contact.organization}</p>
-              )}
-              <p className="contact-description">{contact.description}</p>
+              <div className="contact-card-content">
+                {contact.fullName && (
+                  <p className="contact-subtitle-text">{contact.fullName}</p>
+                )}
+                {contact.organization && (
+                  <p className="contact-subtitle-text">{contact.organization}</p>
+                )}
 
-              <div className="contact-info">
-                {contact.phone && (
-                  <div className="contact-detail">
-                    <span className="detail-label">Teléfono:</span>
-                    <div className="detail-value">
-                      <a href={`tel:${contact.phone}`}>{contact.phone}</a>
-                      <button 
-                        className="copy-btn"
-                        onClick={() => copyToClipboard(contact.phone, `phone-${contact.id}`)}
-                        title="Copiar teléfono"
-                      >
-                        {copiedId === `phone-${contact.id}` ? '✓' : '📋'}
-                      </button>
+                <p className="contact-description">{contact.description}</p>
+
+                <div className="contact-details-list">
+                  {contact.phone && (
+                    <div className="contact-item">
+                      <span className="contact-label">📞 Teléfono</span>
+                      <div className="contact-value-row">
+                        <a href={`tel:${contact.phone}`} className="contact-link">
+                          {contact.phone}
+                        </a>
+                        <button
+                          className="copy-button"
+                          onClick={() => copyToClipboard(contact.phone, `phone-${contact.id}`)}
+                          title="Copiar"
+                        >
+                          {copiedId === `phone-${contact.id}` ? '✓' : '📋'}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                )}
-                {contact.whatsapp && (
-                  <div className="contact-detail">
-                    <span className="detail-label">WhatsApp:</span>
-                    <div className="detail-value">
-                      <a href={`https://wa.me/${contact.whatsapp.replace(/\s/g, '')}`} target="_blank" rel="noopener noreferrer">
-                        {contact.whatsapp}
-                      </a>
-                      <button 
-                        className="copy-btn"
-                        onClick={() => copyToClipboard(contact.whatsapp, `wa-${contact.id}`)}
-                        title="Copiar WhatsApp"
-                      >
-                        {copiedId === `wa-${contact.id}` ? '✓' : '📋'}
-                      </button>
+                  )}
+
+                  {contact.whatsapp && (
+                    <div className="contact-item">
+                      <span className="contact-label">💬 WhatsApp</span>
+                      <div className="contact-value-row">
+                        <a
+                          href={`https://wa.me/${contact.whatsapp.replace(/\s/g, '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="contact-link"
+                        >
+                          {contact.whatsapp}
+                        </a>
+                        <button
+                          className="copy-button"
+                          onClick={() => copyToClipboard(contact.whatsapp, `wa-${contact.id}`)}
+                          title="Copiar"
+                        >
+                          {copiedId === `wa-${contact.id}` ? '✓' : '📋'}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                )}
-                {contact.website && (
-                  <div className="contact-detail">
-                    <span className="detail-label">Sitio Web:</span>
-                    <div className="detail-value">
-                      <a href={`https://${contact.website}`} target="_blank" rel="noopener noreferrer">
+                  )}
+
+                  {contact.website && (
+                    <div className="contact-item">
+                      <span className="contact-label">🌐 Sitio Web</span>
+                      <a
+                        href={`https://${contact.website}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="contact-link"
+                      >
                         {contact.website}
                       </a>
                     </div>
-                  </div>
-                )}
-                {contact.availability && (
-                  <div className="contact-detail">
-                    <span className="detail-label">Disponibilidad:</span>
-                    <span className="availability-badge">{contact.availability}</span>
-                  </div>
-                )}
+                  )}
+
+                  {contact.availability && (
+                    <div className="contact-item">
+                      <span className="contact-label">🕐 Horario</span>
+                      <span className="availability-tag" style={{ borderColor: contact.color, color: contact.color }}>
+                        {contact.availability}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        )})}
+          )
+        })}
       </div>
 
       <div className="contact-footer">
