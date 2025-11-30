@@ -1,0 +1,197 @@
+/* ============================================
+   MODAL - Estilos de Modales
+   ============================================ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.modal-close:hover {
+    background: var(--dark-green);
+    transform: rotate(90deg);
+}
+
+.modal-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+    color: var(--dark-green);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.modal-content p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.modal-description {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 50%, #fafafa 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.1);
+}
+
+.modal-description p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin: 0;
+    text-align: justify;
+    text-align-last: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Modal Wide */
+.modal-content-wide {
+    max-width: 900px;
+}
+
+.modal-content-wide h3 {
+    color: var(--dark-green);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* Additional Flags Grid */
+.additional-flags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.additional-flag-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.additional-flag-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(232, 245, 233, 0.4) 0%, rgba(241, 248, 244, 0.2) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 16px;
+}
+
+.additional-flag-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(76, 175, 80, 0.15);
+}
+
+.additional-flag-card:hover::before {
+    opacity: 1;
+}
+
+.additional-flag-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.additional-flag-card h4 {
+    color: var(--dark-green);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.additional-flag-card p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   RESPONSIVE - Modal
+   ============================================ */
+
+@media (max-width: 768px) {
+    .additional-flags-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .additional-flags-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

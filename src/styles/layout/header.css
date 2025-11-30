@@ -1,0 +1,142 @@
+/* ============================================
+   HEADER - Estilos del Encabezado
+   ============================================ */
+
+/* Rainbow Bar */
+.rainbow-bar {
+    height: 4px;
+    background: linear-gradient(to right,
+            var(--rainbow-1) 0%,
+            var(--rainbow-2) 16.66%,
+            var(--rainbow-3) 33.33%,
+            var(--rainbow-4) 50%,
+            var(--rainbow-5) 66.66%,
+            var(--rainbow-6) 100%);
+}
+
+/* Header Principal */
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(0.4rem, 1.5vw, 0.7rem) clamp(0.8rem, 2.5vw, 1.2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+    max-width: 250px;
+    height: 100%;
+    display: block;
+}
+
+.logo-top {
+    display: block;
+    margin: 0 auto 0.2rem;
+    width: clamp(80px, 12vw, 120px);
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo-img {
+    width: 220px;
+    height: auto;
+}
+
+/* Header Text */
+.header-text {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.header-text h1 {
+    color: var(--dark-green);
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    margin-bottom: 0.15rem;
+    line-height: 1.15;
+}
+
+.header-text p {
+    color: var(--text-light);
+    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+    line-height: 1.25;
+}
+
+/* ============================================
+   RESPONSIVE - Header
+   ============================================ */
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 1rem;
+    }
+
+    .logo {
+        max-width: 200px;
+    }
+
+    .logo-top {
+        width: clamp(160px, 35vw, 220px);
+        margin-bottom: 0.8rem;
+    }
+
+    .header-text h1 {
+        font-size: clamp(1.3rem, 5vw, 1.8rem);
+        line-height: 1.2;
+    }
+
+    .header-text p {
+        font-size: clamp(0.9rem, 3.5vw, 1rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-top {
+        width: clamp(140px, 40vw, 200px);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-top {
+        width: clamp(120px, 45vw, 180px);
+    }
+
+    .header-text h1 {
+        font-size: clamp(1.1rem, 5.5vw, 1.5rem);
+    }
+
+    .header-text p {
+        font-size: clamp(0.85rem, 3.8vw, 0.95rem);
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-top {
+        width: 100px;
+    }
+
+    .header-content {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .header-text h1 {
+        font-size: 1rem;
+    }
+
+    .header-text p {
+        font-size: 0.8rem;
+    }
+}

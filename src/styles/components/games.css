@@ -1,0 +1,138 @@
+/* ============================================
+   GAMES SECTION - Sección de Juegos
+   ============================================ */
+
+.games-section {
+    background: white;
+    padding: clamp(2rem, 4vw, 3rem);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.games-header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.games-header h2 {
+    color: var(--dark-green);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.games-subtitle {
+    color: var(--text-light);
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.game-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.game-selector-btn {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.game-selector-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.15);
+    border-color: var(--primary-green);
+}
+
+.game-selector-btn.active {
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    border-color: var(--dark-green);
+    color: white;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.game-icon {
+    font-size: clamp(2rem, 5vw, 3rem);
+    width: clamp(60px, 10vw, 80px);
+    height: clamp(60px, 10vw, 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.game-selector-btn.active .game-icon {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.game-info {
+    flex: 1;
+}
+
+.game-info h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: 0.5rem;
+    color: var(--dark-green);
+}
+
+.game-selector-btn.active .game-info h3 {
+    color: white;
+}
+
+.game-info p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.game-selector-btn.active .game-info p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.game-content {
+    animation: fadeIn 0.5s;
+}
+
+/* ============================================
+   RESPONSIVE - Games Section
+   ============================================ */
+
+@media (max-width: 768px) {
+    .games-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .game-selector-btn {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .game-info {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .games-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .game-selector {
+        gap: 1rem;
+    }
+}

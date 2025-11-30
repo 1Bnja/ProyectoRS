@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './Timeline.css';
+import '../styles/components/timeline.css';
 import chileFlag from '../assets/Flag_of_Chile.svg.png';
 
 const Timeline = () => {

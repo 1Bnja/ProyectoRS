@@ -9,7 +9,7 @@ import GamesSection from './components/GamesSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import { sectionsData } from './data/sectionsData'
-import './App.css'
+import './styles/main.css'
 
 function App() {
   const [activeSection, setActiveSection] = useState('inicio')

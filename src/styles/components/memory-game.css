@@ -1,0 +1,277 @@
+/* ============================================
+   MEMORY GAME - Juego de Memoria
+   ============================================ */
+
+.memory-game-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    padding: clamp(2rem, 4vw, 3rem);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.game-header h2 {
+    color: var(--dark-green);
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    margin-bottom: 1rem;
+}
+
+.game-description {
+    color: var(--text-light);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.memorization-banner {
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    color: white;
+    padding: clamp(1.2rem, 3vw, 1.5rem);
+    border-radius: 12px;
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.memorization-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.memorization-icon {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    animation: pulse 1s infinite;
+}
+
+.memorization-text {
+    text-align: center;
+}
+
+.memorization-title {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.memorization-countdown {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin: 0;
+    opacity: 0.9;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: clamp(2rem, 5vw, 3rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border-radius: 12px;
+    text-align: center;
+    min-width: 150px;
+}
+
+.stat-label {
+    display: block;
+    color: var(--text-light);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    display: block;
+    color: var(--dark-green);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(0.8rem, 2vw, 1.2rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    cursor: pointer;
+    perspective: 1000px;
+    transition: transform 0.2s;
+}
+
+.memory-card:hover {
+    transform: scale(1.05);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.memory-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+}
+
+.card-question {
+    color: white;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: bold;
+}
+
+.card-back {
+    background: white;
+    transform: rotateY(180deg);
+    padding: 8px;
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.game-controls {
+    text-align: center;
+}
+
+.restart-btn,
+.play-again-btn {
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    color: white;
+    border: none;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.restart-btn:hover,
+.play-again-btn:hover {
+    background: linear-gradient(135deg, var(--dark-green), #1b5e20);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.game-won-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    animation: fadeIn 0.3s;
+}
+
+.game-won-message {
+    background: white;
+    padding: clamp(2rem, 5vw, 3rem);
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+.game-won-message h3 {
+    color: var(--dark-green);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.game-won-message p {
+    color: var(--text-dark);
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    margin-bottom: 2rem;
+}
+
+/* ============================================
+   RESPONSIVE - Memory Game
+   ============================================ */
+
+@media (max-width: 768px) {
+    .memory-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.6rem;
+    }
+
+    .game-stats {
+        gap: 1.5rem;
+    }
+
+    .stat-item {
+        min-width: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .memory-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+
+    .game-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stat-item {
+        width: 100%;
+    }
+
+    .memorization-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 360px) {
+    .memory-grid {
+        gap: 0.4rem;
+    }
+
+    .card-question {
+        font-size: 1.5rem;
+    }
+}

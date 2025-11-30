@@ -1,0 +1,12 @@
+/* ============================================
+   MAIN - Contenedor Principal
+   ============================================ */
+
+main {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: clamp(0.5rem, 2vw, 1.2rem) auto;
+    padding: 0 clamp(0.8rem, 3vw, 2rem);
+    min-height: calc(100vh - 400px);
+}
