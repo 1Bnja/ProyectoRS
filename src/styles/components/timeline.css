@@ -77,15 +77,12 @@
   width: 3px;
   flex: 1;
   min-height: 100%;
-  background: linear-gradient(
-    to bottom,
-    var(--verde-oscuro, #2d5f3f) 0%,
-    #d0d0d0 100%
-  );
+  background: linear-gradient(to bottom,
+      var(--verde-oscuro, #2d5f3f) 0%,
+      #d0d0d0 100%);
   margin-top: 0.5rem;
   position: absolute;
   top: 18px;
-  bottom: -3rem;
 }
 
 /* Caja de contenido */
@@ -191,7 +188,7 @@
   font-weight: 600;
 }
 
-.event-content br + br {
+.event-content br+br {
   display: block;
   content: "";
   margin-top: 0.75rem;

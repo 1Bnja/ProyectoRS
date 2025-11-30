@@ -25,6 +25,7 @@
 @import './components/contact.css';
 @import './components/games.css';
 @import './components/memory-game.css';
+@import './components/trivia-game.css';
 
 /* Utilities */
 @import './utilities/animations.css';

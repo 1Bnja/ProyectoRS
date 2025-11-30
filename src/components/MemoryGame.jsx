@@ -17,6 +17,7 @@ import Demisexual from '../assets/Demisexual.png'
 import Polisexual from '../assets/Polisexual.png'
 
 function MemoryGame() {
+  const [gameStarted, setGameStarted] = useState(false)
   const [cards, setCards] = useState([])
   const [flippedCards, setFlippedCards] = useState([])
   const [matchedCards, setMatchedCards] = useState([])
@@ -68,11 +69,8 @@ function MemoryGame() {
     setGameWon(false)
     setIsMemorizing(true)
     setCountdown(10)
+    setGameStarted(true)
   }
-
-  useEffect(() => {
-    initializeGame()
-  }, [])
 
   // Countdown para la fase de memorización
   useEffect(() => {
@@ -130,6 +128,34 @@ function MemoryGame() {
   const isCardFlipped = (index) => {
     if (isMemorizing) return true
     return flippedCards.includes(index) || matchedCards.includes(cards[index].id)
+  }
+
+  // Pantalla de inicio
+  if (!gameStarted) {
+    return (
+      <div className="memory-game-container">
+        <div className="game-start-screen">
+          <h2>Memorice de Banderas LGBTIQ+</h2>
+          <p className="game-description">
+            Encuentra los pares de banderas de la comunidad LGBTIQ+.
+            Pon a prueba tu memoria mientras aprendes sobre la diversidad.
+          </p>
+          <div className="game-instructions">
+            <h3>Instrucciones:</h3>
+            <ul>
+              <li>Al comenzar, tendrás 10 segundos para memorizar las posiciones</li>
+              <li>Luego, las cartas se voltearán y deberás encontrar los pares</li>
+              <li>Haz clic en dos cartas para voltearlas</li>
+              <li>Si coinciden, permanecerán visibles</li>
+              <li>¡Intenta completar el juego con la menor cantidad de movimientos!</li>
+            </ul>
+          </div>
+          <button className="start-game-btn" onClick={initializeGame}>
+            Comenzar Juego
+          </button>
+        </div>
+      </div>
+    )
   }
 
   return (

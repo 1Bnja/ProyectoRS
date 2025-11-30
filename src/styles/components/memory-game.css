@@ -28,6 +28,97 @@
     line-height: 1.7;
 }
 
+/* ============================================
+   START SCREEN - Pantalla de Inicio
+   ============================================ */
+
+.game-start-screen {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3rem);
+}
+
+.start-icon {
+    font-size: clamp(4rem, 10vw, 6rem);
+    margin-bottom: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+.game-start-screen h2 {
+    color: var(--dark-green);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.game-start-screen .game-description {
+    color: var(--text-light);
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.game-instructions {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.game-instructions h3 {
+    color: var(--dark-green);
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: 1rem;
+}
+
+.game-instructions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-instructions li {
+    color: var(--text-dark);
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+}
+
+.game-instructions li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.start-game-btn {
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    color: white;
+    border: none;
+    padding: clamp(1rem, 2.5vw, 1.3rem) clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.start-game-btn:hover {
+    background: linear-gradient(135deg, var(--dark-green), #1b5e20);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* ============================================
+   MEMORIZATION PHASE
+   ============================================ */
+
 .memorization-banner {
     background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
     color: white;
@@ -225,6 +316,22 @@
     color: var(--text-dark);
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     margin-bottom: 2rem;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 /* ============================================

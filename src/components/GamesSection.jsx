@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import MemoryGame from './MemoryGame'
+import TriviaGame from './TriviaGame'
 
 function GamesSection() {
   const [selectedGame, setSelectedGame] = useState('memory')
@@ -8,16 +9,13 @@ function GamesSection() {
     {
       id: 'memory',
       name: 'Memorice',
-      description: 'Encuentra los pares de banderas LGBTIQ+',
-      icon: '🎴'
+      description: 'Encuentra los pares de banderas LGBTIQ+'
+    },
+    {
+      id: 'trivia',
+      name: 'Trivia',
+      description: 'Pon a prueba tus conocimientos sobre diversidad'
     }
-    // Aquí se pueden agregar más juegos en el futuro
-    // {
-    //   id: 'trivia',
-    //   name: 'Trivia',
-    //   description: 'Pon a prueba tus conocimientos',
-    //   icon: '❓'
-    // }
   ]
 
   return (
@@ -29,29 +27,26 @@ function GamesSection() {
         </p>
       </div>
 
-      {/* Selector de juegos - se mostrará cuando haya más de un juego */}
-      {games.length > 1 && (
-        <div className="game-selector">
-          {games.map((game) => (
-            <button
-              key={game.id}
-              className={`game-selector-btn ${selectedGame === game.id ? 'active' : ''}`}
-              onClick={() => setSelectedGame(game.id)}
-            >
-              <span className="game-icon">{game.icon}</span>
-              <div className="game-info">
-                <h3>{game.name}</h3>
-                <p>{game.description}</p>
-              </div>
-            </button>
-          ))}
-        </div>
-      )}
+      {/* Selector de juegos */}
+      <div className="game-selector">
+        {games.map((game) => (
+          <button
+            key={game.id}
+            className={`game-selector-btn ${selectedGame === game.id ? 'active' : ''}`}
+            onClick={() => setSelectedGame(game.id)}
+          >
+            <div className="game-info">
+              <h3>{game.name}</h3>
+              <p>{game.description}</p>
+            </div>
+          </button>
+        ))}
+      </div>
 
       {/* Renderizar el juego seleccionado */}
       <div className="game-content">
         {selectedGame === 'memory' && <MemoryGame />}
-        {/* Aquí se pueden agregar más juegos en el futuro */}
+        {selectedGame === 'trivia' && <TriviaGame />}
       </div>
     </div>
   )
