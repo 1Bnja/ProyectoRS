@@ -1,0 +1,532 @@
+/* ============================================
+   RESPONSIVE LAPTOP - Optimizaciones para Laptops 13-14"
+   Resoluciones: 1024px - 1440px (típicamente 1366x768, 1440x900)
+   ============================================ */
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+    /* ==========================================
+     AJUSTES GLOBALES
+     ========================================== */
+
+    body {
+        font-size: 15px;
+        /* Reducir tamaño base */
+    }
+
+    /* ==========================================
+     HEADER - Más compacto
+     ========================================== */
+
+    .header-content {
+        padding: 0.5rem 1rem;
+        gap: 0.8rem;
+    }
+
+    .logo-top {
+        width: 90px;
+        margin-bottom: 0.3rem;
+    }
+
+    .header-text h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .header-text p {
+        font-size: 0.85rem;
+    }
+
+    /* ==========================================
+     NAVIGATION - Más compacto
+     ========================================== */
+
+    nav {
+        position: relative;
+        /* Quitar sticky para ahorrar espacio */
+    }
+
+    .nav-content {
+        padding: 0 1.5rem;
+        gap: 0.3rem;
+    }
+
+    .nav-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* ==========================================
+     MAIN - Reducir márgenes
+     ========================================== */
+
+    main {
+        margin: 0.8rem auto;
+        padding: 0 1.5rem;
+        min-height: calc(100vh - 350px);
+    }
+
+    /* ==========================================
+     INTRO SECTION - Iconos más pequeños
+     ========================================== */
+
+    .intro-section {
+        padding: 2rem 1.5rem;
+        width: 95%;
+    }
+
+    .intro-section h2 {
+        font-size: 1.7rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .intro-section p {
+        font-size: 0.95rem;
+        margin: 0 auto 1.8rem;
+    }
+
+    .diversity-icons {
+        margin-top: 1.8rem;
+        padding-bottom: 1rem;
+        gap: 1rem;
+    }
+
+    .diversity-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 1.6rem;
+    }
+
+    .flag-letter {
+        width: 22px;
+        height: 22px;
+        font-size: 0.75rem;
+        bottom: -6px;
+        right: -6px;
+    }
+
+    .plus-symbol {
+        font-size: 2.2rem;
+    }
+
+    /* ==========================================
+     SECTION HEADER - Más compacto
+     ========================================== */
+
+    .section-header {
+        padding: 1.3rem;
+        margin-bottom: 1.8rem;
+        border-radius: 12px;
+    }
+
+    .section-header h2 {
+        font-size: 1.7rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+    }
+
+    /* ==========================================
+     CARDS - Mejor espaciado
+     ========================================== */
+
+    .cards-container {
+        padding: 1.5rem;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+        padding: 1.3rem;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .card-image-wrapper {
+        height: 200px;
+        margin-top: 1rem;
+    }
+
+    /* ==========================================
+     CAROUSEL - Optimizado para laptop
+     ========================================== */
+
+    .carousel-container {
+        padding: 2.5rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .carousel-content {
+        min-height: 400px;
+        padding: 0 4rem;
+    }
+
+    .carousel-content .card {
+        min-height: 420px;
+        padding: 2rem;
+        max-width: 680px;
+    }
+
+    .carousel-content .card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        gap: 0.8rem;
+    }
+
+    .carousel-content .card h3 .card-icon {
+        font-size: 2.2rem;
+    }
+
+    .carousel-content .card p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
+    .carousel-content .card-image-wrapper {
+        height: 240px;
+        margin-top: 1.2rem;
+    }
+
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+
+    .carousel-btn-prev {
+        left: 0.8rem;
+    }
+
+    .carousel-btn-next {
+        right: 0.8rem;
+    }
+
+    .carousel-indicators {
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+
+    .carousel-indicator {
+        width: 13px;
+        height: 13px;
+    }
+
+    /* ==========================================
+     TIMELINE - Más compacto
+     ========================================== */
+
+    .timeline-container {
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    .timeline-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .timeline-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .timeline-header p {
+        font-size: 1.05rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 2.5rem;
+    }
+
+    .timeline-content-box {
+        padding: 1.5rem;
+    }
+
+    .timeline-period-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .timeline-events {
+        gap: 1.2rem;
+    }
+
+    .event-section {
+        padding: 1rem;
+    }
+
+    .event-header {
+        font-size: 1.05rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .event-content {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* ==========================================
+     QR SECTION - Optimizado
+     ========================================== */
+
+    .qr-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .qr-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .qr-tabs {
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .qr-tab {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .qr-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .qr-container {
+        gap: 2rem;
+    }
+
+    .qr-code-wrapper {
+        padding: 1.2rem;
+    }
+
+    /* ==========================================
+     CONTACT SECTION - Mejor distribución
+     ========================================== */
+
+    .contact-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-header {
+        margin-bottom: 2rem;
+    }
+
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+
+    .contact-cards-grid {
+        gap: 1.5rem;
+    }
+
+    .contact-card-header-modern {
+        padding: 1.3rem 1.5rem 0.8rem;
+    }
+
+    .contact-card-content {
+        padding: 0 1.5rem 1.5rem;
+    }
+
+    .contact-icon-modern {
+        width: 56px;
+        height: 56px;
+        font-size: 1.6rem;
+    }
+
+    .contact-title-area h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /* ==========================================
+     GAMES SECTION - Optimizado
+     ========================================== */
+
+    .games-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .games-header {
+        margin-bottom: 2rem;
+    }
+
+    .games-header h2 {
+        font-size: 2rem;
+    }
+
+    .games-subtitle {
+        font-size: 1rem;
+    }
+
+    .game-selector {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .game-selector-btn {
+        padding: 1.3rem;
+    }
+
+    .game-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 2.2rem;
+    }
+
+    .game-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .game-info p {
+        font-size: 0.9rem;
+    }
+
+    /* ==========================================
+     MEMORY GAME - Optimizado
+     ========================================== */
+
+    .memory-game-container {
+        padding: 2rem;
+    }
+
+    .game-header {
+        margin-bottom: 2rem;
+    }
+
+    .game-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .game-description {
+        font-size: 1rem;
+    }
+
+    .memorization-banner {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .memorization-icon {
+        font-size: 2rem;
+    }
+
+    .memorization-title {
+        font-size: 1.3rem;
+    }
+
+    .memorization-countdown {
+        font-size: 1.05rem;
+    }
+
+    .game-stats {
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .stat-item {
+        padding: 1rem 1.3rem;
+        min-width: 140px;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+
+    .stat-value {
+        font-size: 1.7rem;
+    }
+
+    .memory-grid {
+        gap: 1rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+    }
+
+    .card-question {
+        font-size: 2.5rem;
+    }
+
+    /* ==========================================
+     MODAL - Ajustado
+     ========================================== */
+
+    .modal-content {
+        padding: 1.8rem;
+        max-width: 550px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .modal-content p {
+        font-size: 1rem;
+    }
+
+    .modal-description p {
+        font-size: 1rem;
+    }
+
+    .additional-flags-grid {
+        gap: 1.3rem;
+        margin-top: 1.5rem;
+    }
+
+    .additional-flag-card {
+        padding: 1.3rem;
+    }
+
+    .additional-flag-card h4 {
+        font-size: 1.2rem;
+    }
+
+    /* ==========================================
+     FOOTER - Compacto
+     ========================================== */
+
+    footer {
+        padding: 0.8rem 1.2rem;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ==========================================
+   AJUSTES ESPECÍFICOS PARA 1366x768
+   ========================================== */
+
+@media (width: 1366px) and (height: 768px) {
+    /* Optimizaciones extra para esta resolución específica */
+
+    .intro-section {
+        padding: 1.8rem 1.5rem;
+    }
+
+    .diversity-icons {
+        margin-top: 1.5rem;
+    }
+
+    .carousel-content .card {
+        min-height: 380px;
+    }
+}
