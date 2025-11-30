@@ -3,6 +3,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1rem 3rem;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Header */
@@ -32,6 +33,11 @@
   padding: 3rem;
   font-size: 1.125rem;
   color: #666;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Wrapper de la línea de tiempo */

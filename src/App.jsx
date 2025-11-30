@@ -16,7 +16,7 @@ function App() {
 
   const handleSectionChange = (sectionId) => {
     setActiveSection(sectionId)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'instant' })
   }
 
   useEffect(() => {
@@ -31,11 +31,11 @@ function App() {
     <>
       <RainbowBar />
       <Header />
-      <Navigation 
-        activeSection={activeSection} 
-        onSectionChange={handleSectionChange} 
+      <Navigation
+        activeSection={activeSection}
+        onSectionChange={handleSectionChange}
       />
-      
+
       <main>
         {activeSection === 'inicio' && (
           <section id="inicio" className="section active">
