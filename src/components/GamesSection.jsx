@@ -9,14 +9,12 @@ function GamesSection() {
     {
       id: 'memory',
       name: 'Memorice',
-      description: 'Encuentra los pares de banderas LGBTIQ+',
-      icon: '🎴'
+      description: 'Encuentra los pares de banderas LGBTIQ+'
     },
     {
       id: 'trivia',
       name: 'Trivia',
-      description: 'Pon a prueba tus conocimientos',
-      icon: '❓'
+      description: 'Pon a prueba tus conocimientos sobre diversidad'
     }
   ]
 

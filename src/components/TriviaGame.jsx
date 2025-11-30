@@ -1,192 +1,279 @@
-import { useState, useEffect } from 'react'
-import { triviaQuestions } from '../data/triviaQuestions'
+import { useState } from 'react'
 
 function TriviaGame() {
-  const [selectedQuestions, setSelectedQuestions] = useState([])
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-  const [selectedAnswer, setSelectedAnswer] = useState(null)
-  const [score, setScore] = useState(0)
-  const [timeLeft, setTimeLeft] = useState(60)
-  const [gameStarted, setGameStarted] = useState(false)
-  const [gameFinished, setGameFinished] = useState(false)
-  const [showFeedback, setShowFeedback] = useState(false)
+    const [gameStarted, setGameStarted] = useState(false)
+    const [currentQuestion, setCurrentQuestion] = useState(0)
+    const [score, setScore] = useState(0)
+    const [selectedAnswer, setSelectedAnswer] = useState(null)
+    const [showFeedback, setShowFeedback] = useState(false)
+    const [gameFinished, setGameFinished] = useState(false)
 
-  // Seleccionar 10 preguntas aleatorias al iniciar
-  const initializeGame = () => {
-    const shuffled = [...triviaQuestions].sort(() => Math.random() - 0.5)
-    setSelectedQuestions(shuffled.slice(0, 10))
-    setCurrentQuestionIndex(0)
-    setSelectedAnswer(null)
-    setScore(0)
-    setTimeLeft(60)
-    setGameStarted(true)
-    setGameFinished(false)
-    setShowFeedback(false)
-  }
+    const questions = [
+        {
+            question: '¿Qué significa la sigla LGBTIQ+?',
+            options: [
+                'Lesbianas, Gays, Bisexuales, Transgénero, Intersexuales, Queer y más',
+                'Lesbianas, Gays, Bisexuales, Transexuales, Indefinidos, Queer y más',
+                'Lesbianas, Gays, Binarios, Transgénero, Intersexuales, Queer y más',
+                'Lesbianas, Gays, Bisexuales, Transgénero, Indecisos, Queer y más'
+            ],
+            correctAnswer: 0,
+            explanation: 'LGBTIQ+ significa Lesbianas, Gays, Bisexuales, Transgénero, Intersexuales, Queer y el símbolo + incluye todas las demás identidades de género y orientaciones sexuales.'
+        },
+        {
+            question: '¿Qué representa la bandera del arcoíris?',
+            options: [
+                'Solo el orgullo gay',
+                'La diversidad y el orgullo de toda la comunidad LGBTIQ+',
+                'Una celebración religiosa',
+                'Un símbolo político'
+            ],
+            correctAnswer: 1,
+            explanation: 'La bandera del arcoíris es un símbolo de la diversidad y el orgullo de toda la comunidad LGBTIQ+. Cada color representa diferentes aspectos de la vida y la comunidad.'
+        },
+        {
+            question: '¿Qué es la identidad de género?',
+            options: [
+                'El sexo biológico de una persona',
+                'La forma en que una persona se viste',
+                'La percepción interna y personal de ser hombre, mujer, ambos o ninguno',
+                'La orientación sexual de una persona'
+            ],
+            correctAnswer: 2,
+            explanation: 'La identidad de género es la percepción interna y personal de ser hombre, mujer, ambos o ninguno, independientemente del sexo asignado al nacer.'
+        },
+        {
+            question: '¿Qué significa ser una persona transgénero?',
+            options: [
+                'Sentir atracción por personas del mismo género',
+                'Tener una identidad de género diferente al sexo asignado al nacer',
+                'Vestirse con ropa del género opuesto',
+                'Cambiar de orientación sexual'
+            ],
+            correctAnswer: 1,
+            explanation: 'Una persona transgénero es aquella cuya identidad de género difiere del sexo que le fue asignado al nacer.'
+        },
+        {
+            question: '¿Qué es la orientación sexual?',
+            options: [
+                'La identidad de género de una persona',
+                'La atracción emocional, romántica y/o sexual hacia otras personas',
+                'La forma de expresar el género',
+                'El rol que una persona desempeña en la sociedad'
+            ],
+            correctAnswer: 1,
+            explanation: 'La orientación sexual se refiere a la atracción emocional, romántica y/o sexual que una persona siente hacia otras personas.'
+        },
+        {
+            question: '¿Qué significa ser una persona intersexual?',
+            options: [
+                'Sentir atracción por múltiples géneros',
+                'No identificarse con ningún género',
+                'Nacer con características sexuales que no se ajustan a las definiciones típicas de masculino o femenino',
+                'Cambiar de género durante la vida'
+            ],
+            correctAnswer: 2,
+            explanation: 'Una persona intersexual nace con características sexuales (cromosomas, gónadas, hormonas) que no se ajustan a las definiciones típicas de masculino o femenino.'
+        },
+        {
+            question: '¿Qué es la pansexualidad?',
+            options: [
+                'Atracción solo hacia personas del mismo género',
+                'Atracción hacia personas de cualquier género o identidad',
+                'No sentir atracción sexual',
+                'Atracción solo hacia dos géneros'
+            ],
+            correctAnswer: 1,
+            explanation: 'La pansexualidad es la atracción emocional, romántica y/o sexual hacia personas independientemente de su género o identidad de género.'
+        },
+        {
+            question: '¿Qué significa ser una persona no binaria?',
+            options: [
+                'Sentir atracción por ambos géneros',
+                'No identificarse exclusivamente como hombre o mujer',
+                'Cambiar de género frecuentemente',
+                'No tener orientación sexual definida'
+            ],
+            correctAnswer: 1,
+            explanation: 'Una persona no binaria es aquella cuya identidad de género no se ajusta exclusivamente a las categorías de hombre o mujer.'
+        },
+        {
+            question: '¿Qué es la asexualidad?',
+            options: [
+                'No tener identidad de género',
+                'Experimentar poca o ninguna atracción sexual',
+                'No tener relaciones románticas',
+                'Cambiar de orientación sexual'
+            ],
+            correctAnswer: 1,
+            explanation: 'La asexualidad es una orientación sexual en la que una persona experimenta poca o ninguna atracción sexual hacia otras personas.'
+        },
+        {
+            question: '¿Cuál es el objetivo principal de la educación sobre diversidad sexual?',
+            options: [
+                'Cambiar la orientación sexual de las personas',
+                'Promover el respeto, la inclusión y los derechos humanos',
+                'Imponer una ideología específica',
+                'Eliminar las diferencias entre las personas'
+            ],
+            correctAnswer: 1,
+            explanation: 'El objetivo principal es promover el respeto, la inclusión y los derechos humanos de todas las personas, independientemente de su orientación sexual o identidad de género.'
+        }
+    ]
 
-  // Temporizador
-  useEffect(() => {
-    if (gameStarted && !gameFinished && timeLeft > 0) {
-      const timer = setTimeout(() => {
-        setTimeLeft(timeLeft - 1)
-      }, 1000)
-      return () => clearTimeout(timer)
-    } else if (timeLeft === 0 && !gameFinished) {
-      finishGame()
-    }
-  }, [gameStarted, gameFinished, timeLeft])
-
-  const handleAnswerClick = (answerIndex) => {
-    if (showFeedback || gameFinished) return
-
-    setSelectedAnswer(answerIndex)
-    setShowFeedback(true)
-
-    const isCorrect = answerIndex === selectedQuestions[currentQuestionIndex].correctAnswer
-    if (isCorrect) {
-      setScore(score + 1)
-    }
-
-    // Esperar 1.5 segundos antes de pasar a la siguiente pregunta
-    setTimeout(() => {
-      if (currentQuestionIndex < selectedQuestions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1)
+    const startGame = () => {
+        setGameStarted(true)
+        setCurrentQuestion(0)
+        setScore(0)
         setSelectedAnswer(null)
         setShowFeedback(false)
-      } else {
-        finishGame()
-      }
-    }, 1500)
-  }
+        setGameFinished(false)
+    }
 
-  const finishGame = () => {
-    setGameFinished(true)
-    setGameStarted(false)
-  }
+    const handleAnswerSelect = (answerIndex) => {
+        if (showFeedback) return
 
-  const getScoreMessage = () => {
-    const percentage = (score / 10) * 100
-    if (percentage === 100) return '¡Perfecto! Eres un experto en diversidad'
-    if (percentage >= 80) return '¡Excelente! Tienes muy buenos conocimientos'
-    if (percentage >= 60) return '¡Bien! Vas por buen camino'
-    if (percentage >= 40) return 'Puedes mejorar, sigue aprendiendo'
-    return 'Aún hay mucho por aprender, ¡no te rindas!'
-  }
+        setSelectedAnswer(answerIndex)
+        setShowFeedback(true)
 
-  if (!gameStarted && !gameFinished) {
-    return (
-      <div className="trivia-game-container">
-        <div className="trivia-intro">
-          <h2>Trivia de Diversidad Sexual</h2>
-          <p className="trivia-description">
-            Pon a prueba tus conocimientos sobre diversidad sexual e identidad de género. 
-            Responde 10 preguntas en 60 segundos. ¡Buena suerte!
-          </p>
-          <div className="trivia-rules">
-            <h3>Reglas del juego:</h3>
-            <ul>
-              <li>Tienes <strong>60 segundos</strong> para responder todas las preguntas</li>
-              <li>Son <strong>10 preguntas</strong> seleccionadas aleatoriamente</li>
-              <li>Cada respuesta correcta suma <strong>1 punto</strong></li>
-              <li>Las preguntas se responden automáticamente después de seleccionar una opción</li>
-              <li>¡No puedes volver atrás!</li>
-            </ul>
-          </div>
-          <button className="trivia-start-btn" onClick={initializeGame}>
-            Comenzar Trivia
-          </button>
-        </div>
-      </div>
-    )
-  }
+        if (answerIndex === questions[currentQuestion].correctAnswer) {
+            setScore(score + 1)
+        }
+    }
 
-  if (gameFinished) {
-    return (
-      <div className="trivia-game-container">
-        <div className="trivia-results">
-          <h2>¡Juego Terminado!</h2>
-          <div className="trivia-score-display">
-            <div className="trivia-score-number">{score}/10</div>
-            <div className="trivia-score-percentage">{((score / 10) * 100).toFixed(0)}%</div>
-          </div>
-          <p className="trivia-score-message">{getScoreMessage()}</p>
-          <div className="trivia-stats">
-            <div className="trivia-stat">
-              <span className="trivia-stat-label">Correctas:</span>
-              <span className="trivia-stat-value correct">{score}</span>
+    const handleNextQuestion = () => {
+        if (currentQuestion + 1 < questions.length) {
+            setCurrentQuestion(currentQuestion + 1)
+            setSelectedAnswer(null)
+            setShowFeedback(false)
+        } else {
+            setGameFinished(true)
+        }
+    }
+
+    const getScoreMessage = () => {
+        const percentage = (score / questions.length) * 100
+        if (percentage === 100) return '¡Perfecto! Eres un experto en diversidad sexual'
+        if (percentage >= 80) return '¡Excelente! Tienes un gran conocimiento'
+        if (percentage >= 60) return '¡Muy bien! Vas por buen camino'
+        if (percentage >= 40) return 'Buen intento, sigue aprendiendo'
+        return 'No te desanimes, la educación es un proceso continuo'
+    }
+
+    if (!gameStarted) {
+        return (
+            <div className="trivia-game-container">
+                <div className="game-start-screen">
+                    <h2>Trivia LGBTIQ+</h2>
+                    <p className="game-description">
+                        Pon a prueba tus conocimientos sobre diversidad sexual e identidad de género.
+                        Responde 10 preguntas y aprende más sobre la comunidad LGBTIQ+.
+                    </p>
+                    <div className="game-instructions">
+                        <h3>Instrucciones:</h3>
+                        <ul>
+                            <li>Responde cada pregunta seleccionando una de las opciones</li>
+                            <li>Recibirás retroalimentación inmediata después de cada respuesta</li>
+                            <li>Al final verás tu puntuación total</li>
+                            <li>¡Aprende y diviértete!</li>
+                        </ul>
+                    </div>
+                    <button className="start-game-btn" onClick={startGame}>
+                        Comenzar Trivia
+                    </button>
+                </div>
             </div>
-            <div className="trivia-stat">
-              <span className="trivia-stat-label">Incorrectas:</span>
-              <span className="trivia-stat-value incorrect">{10 - score}</span>
+        )
+    }
+
+    if (gameFinished) {
+        return (
+            <div className="trivia-game-container">
+                <div className="game-finished-screen">
+                    <h2>¡Trivia Completada!</h2>
+                    <div className="final-score">
+                        <div className="score-circle">
+                            <span className="score-number">{score}</span>
+                            <span className="score-total">/ {questions.length}</span>
+                        </div>
+                    </div>
+                    <p className="score-message">{getScoreMessage()}</p>
+                    <div className="score-percentage">
+                        Porcentaje de aciertos: {Math.round((score / questions.length) * 100)}%
+                    </div>
+                    <button className="restart-game-btn" onClick={startGame}>
+                        Jugar de Nuevo
+                    </button>
+                </div>
             </div>
-          </div>
-          <button className="trivia-restart-btn" onClick={initializeGame}>
-            Jugar de Nuevo
-          </button>
+        )
+    }
+
+    const question = questions[currentQuestion]
+    const isCorrect = selectedAnswer === question.correctAnswer
+
+    return (
+        <div className="trivia-game-container">
+            <div className="trivia-header">
+                <div className="question-progress">
+                    Pregunta {currentQuestion + 1} de {questions.length}
+                </div>
+                <div className="current-score">
+                    Puntuación: {score}
+                </div>
+            </div>
+
+            <div className="progress-bar">
+                <div
+                    className="progress-fill"
+                    style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+                />
+            </div>
+
+            <div className="question-card">
+                <h3 className="question-text">{question.question}</h3>
+
+                <div className="answers-grid">
+                    {question.options.map((option, index) => (
+                        <button
+                            key={index}
+                            className={`answer-option ${selectedAnswer === index
+                                    ? index === question.correctAnswer
+                                        ? 'correct'
+                                        : 'incorrect'
+                                    : ''
+                                } ${showFeedback && index === question.correctAnswer ? 'correct' : ''}`}
+                            onClick={() => handleAnswerSelect(index)}
+                            disabled={showFeedback}
+                        >
+                            <span className="option-letter">
+                                {String.fromCharCode(65 + index)}
+                            </span>
+                            <span className="option-text">{option}</span>
+                            {showFeedback && index === question.correctAnswer && (
+                                <span className="check-icon">✓</span>
+                            )}
+                            {showFeedback && selectedAnswer === index && index !== question.correctAnswer && (
+                                <span className="cross-icon">✗</span>
+                            )}
+                        </button>
+                    ))}
+                </div>
+
+                {showFeedback && (
+                    <div className={`feedback-box ${isCorrect ? 'correct-feedback' : 'incorrect-feedback'}`}>
+                        <div className="feedback-header">
+                            {isCorrect ? '¡Correcto!' : 'Incorrecto'}
+                        </div>
+                        <p className="feedback-explanation">{question.explanation}</p>
+                        <button className="next-question-btn" onClick={handleNextQuestion}>
+                            {currentQuestion + 1 < questions.length ? 'Siguiente Pregunta' : 'Ver Resultados'}
+                        </button>
+                    </div>
+                )}
+            </div>
         </div>
-      </div>
     )
-  }
-
-  const currentQuestion = selectedQuestions[currentQuestionIndex]
-
-  return (
-    <div className="trivia-game-container">
-      <div className="trivia-header">
-        <div className="trivia-progress">
-          <div className="trivia-progress-bar">
-            <div 
-              className="trivia-progress-fill"
-              style={{ width: `${((currentQuestionIndex + 1) / 10) * 100}%` }}
-            ></div>
-          </div>
-          <span className="trivia-progress-text">
-            Pregunta {currentQuestionIndex + 1} de 10
-          </span>
-        </div>
-        <div className={`trivia-timer ${timeLeft <= 10 ? 'warning' : ''}`}>
-          Tiempo: {timeLeft}s
-        </div>
-      </div>
-
-      <div className="trivia-score-current">
-        Puntuación: {score}
-      </div>
-
-      <div className="trivia-question-card">
-        <h3 className="trivia-question">{currentQuestion.question}</h3>
-        <div className="trivia-options">
-          {currentQuestion.options.map((option, index) => {
-            let className = 'trivia-option'
-            
-            if (showFeedback) {
-              if (index === currentQuestion.correctAnswer) {
-                className += ' correct'
-              } else if (index === selectedAnswer) {
-                className += ' incorrect'
-              }
-            } else if (selectedAnswer === index) {
-              className += ' selected'
-            }
-
-            return (
-              <button
-                key={index}
-                className={className}
-                onClick={() => handleAnswerClick(index)}
-                disabled={showFeedback}
-              >
-                <span className="trivia-option-letter">
-                  {String.fromCharCode(65 + index)}
-                </span>
-                <span className="trivia-option-text">{option}</span>
-              </button>
-            )
-          })}
-        </div>
-      </div>
-    </div>
-  )
 }
 
 export default TriviaGame

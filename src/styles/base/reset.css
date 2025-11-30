@@ -1,0 +1,9 @@
+/* ============================================
+   RESET CSS - Normalización de Estilos Base
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

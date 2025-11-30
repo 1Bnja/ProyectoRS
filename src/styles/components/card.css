@@ -1,0 +1,153 @@
+/* ============================================
+   CARDS - Estilos de Tarjetas
+   ============================================ */
+
+/* Cards Container */
+.cards-container {
+    background: white;
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: clamp(1.25rem, 4vw, 2rem);
+}
+
+/* Card Base */
+.card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(232, 245, 233, 0.4) 0%, rgba(241, 248, 244, 0.2) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 16px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(76, 175, 80, 0.15);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Card Title */
+.card h3 {
+    color: var(--dark-green);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Card Icon */
+.card-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+/* Card Text */
+.card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    position: relative;
+    z-index: 1;
+}
+
+/* Card Image */
+.card-image-wrapper {
+    width: 100%;
+    height: clamp(200px, 32vh, 300px);
+    overflow: hidden;
+    border-radius: 12px;
+    margin-top: clamp(1rem, 2.5vw, 1.5rem);
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8e8e8 100%);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.5rem, 1vw, 0.8rem);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* ============================================
+   RESPONSIVE - Cards
+   ============================================ */
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .card-image-wrapper {
+        height: clamp(180px, 30vh, 260px);
+        margin-top: clamp(0.8rem, 2vw, 1.2rem);
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 1.25rem;
+    }
+
+    .card h3 {
+        font-size: 1.15rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+
+    .card-image-wrapper {
+        height: clamp(160px, 28vh, 220px);
+        margin-top: clamp(0.7rem, 1.5vw, 1rem);
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .card-image-wrapper {
+        height: 150px;
+        padding: 0.4rem;
+    }
+}

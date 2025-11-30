@@ -1,0 +1,174 @@
+/* ============================================
+   INTRO SECTION - Sección de Introducción
+   ============================================ */
+
+.intro-section {
+    background: white;
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: min(95%, 1000px);
+}
+
+.intro-section h2 {
+    color: var(--dark-green);
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.intro-section p {
+    color: var(--text-light);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    max-width: 850px;
+    margin: 0 auto clamp(2rem, 4vw, 3rem);
+    line-height: 1.5;
+}
+
+/* Diversity Icons */
+.diversity-icons {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    flex-wrap: wrap;
+    margin-top: clamp(2rem, 4vw, 3rem);
+    padding-bottom: clamp(1rem, 2vw, 1.5rem);
+    position: relative;
+    z-index: 1;
+}
+
+.diversity-icon {
+    width: clamp(70px, 12vw, 90px);
+    height: clamp(70px, 12vw, 90px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    color: white;
+    animation: float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.diversity-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+}
+
+.flag-letter {
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    background: var(--primary-green);
+    color: white;
+    font-size: clamp(0.8rem, 2.2vw, 1rem);
+    font-weight: bold;
+    width: clamp(24px, 5vw, 28px);
+    height: clamp(24px, 5vw, 28px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.diversity-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.diversity-icon:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.diversity-icon:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.diversity-icon:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.diversity-icon:nth-child(5) {
+    animation-delay: 2s;
+}
+
+.diversity-icon:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.diversity-icon:nth-child(7) {
+    animation-delay: 3s;
+}
+
+.diversity-icon:nth-child(8) {
+    animation-delay: 3.5s;
+}
+
+.plus-symbol {
+    color: white;
+    font-size: clamp(2.5rem, 6vw, 3rem);
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* ============================================
+   RESPONSIVE - Intro Section
+   ============================================ */
+
+@media (max-width: 768px) {
+    #inicio .intro-section {
+        width: 100%;
+        padding: 2.5rem 1.25rem;
+    }
+
+    .diversity-icons {
+        gap: 1.2rem;
+        margin-top: 2.5rem;
+    }
+
+    .diversity-icon {
+        width: clamp(75px, 16vw, 95px);
+        height: clamp(75px, 16vw, 95px);
+        font-size: clamp(1.8rem, 8vw, 2.3rem);
+    }
+
+    .flag-letter {
+        bottom: -6px;
+        right: -6px;
+        font-size: clamp(0.75rem, 3vw, 0.95rem);
+        width: clamp(22px, 6vw, 26px);
+        height: clamp(22px, 6vw, 26px);
+    }
+}
+
+@media (max-width: 600px) {
+    .intro-section {
+        padding: 2rem 1rem;
+    }
+
+    .intro-section p {
+        margin: 0 auto clamp(1.5rem, 4vw, 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-section {
+        border-radius: 16px;
+        padding: 2rem 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .diversity-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+}

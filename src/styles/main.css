@@ -1,0 +1,32 @@
+/* ============================================
+   MAIN CSS - Archivo Principal de Estilos
+   Importa todos los módulos CSS del proyecto
+   ============================================ */
+
+/* Base Styles */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/global.css';
+
+/* Layout Styles */
+@import './layout/header.css';
+@import './layout/navigation.css';
+@import './layout/footer.css';
+@import './layout/main.css';
+
+/* Component Styles */
+@import './components/section-header.css';
+@import './components/card.css';
+@import './components/modal.css';
+@import './components/intro-section.css';
+@import './components/carousel.css';
+@import './components/timeline.css';
+@import './components/qr-section.css';
+@import './components/contact.css';
+@import './components/games.css';
+@import './components/memory-game.css';
+@import './components/trivia-game.css';
+
+/* Utilities */
+@import './utilities/animations.css';
+@import './utilities/responsive-laptop.css';

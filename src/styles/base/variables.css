@@ -1,0 +1,28 @@
+/* ============================================
+   VARIABLES CSS - Tokens de Diseño
+   ============================================ */
+
+:root {
+    /* Colores Principales */
+    --primary-green: #4CAF50;
+    --dark-green: #2E7D32;
+
+    /* Colores de Fondo */
+    --light-bg: #f5f5f5;
+    --card-bg: #ffffff;
+
+    /* Colores de Texto */
+    --text-dark: #333333;
+    --text-light: #666666;
+
+    /* Colores del Arcoíris */
+    --rainbow-1: #FF0018;
+    --rainbow-2: #FFA52C;
+    --rainbow-3: #FFFF41;
+    --rainbow-4: #008018;
+    --rainbow-5: #0000F9;
+    --rainbow-6: #86007D;
+
+    /* Color para Timeline */
+    --verde-oscuro: #2d5f3f;
+}
